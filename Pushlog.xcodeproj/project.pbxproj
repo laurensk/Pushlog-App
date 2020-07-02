@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D403CE424AE1DFA007A1C8A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CE324AE1DFA007A1C8A /* DateUtils.swift */; };
+		0D403CE824AE2867007A1C8A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CE724AE2867007A1C8A /* Enums.swift */; };
+		0D403CEC24AE6D85007A1C8A /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CEB24AE6D85007A1C8A /* LogListView.swift */; };
+		0D403CEE24AE7C11007A1C8A /* MoreCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CED24AE7C11007A1C8A /* MoreCardView.swift */; };
 		0DD87F0624ADA02A00DBE3CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F0524ADA02A00DBE3CD /* AppDelegate.swift */; };
 		0DD87F0824ADA02A00DBE3CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F0724ADA02A00DBE3CD /* SceneDelegate.swift */; };
 		0DD87F0A24ADA02A00DBE3CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F0924ADA02A00DBE3CD /* ContentView.swift */; };
@@ -17,8 +21,8 @@
 		0DD87F2824ADA02D00DBE3CD /* PushlogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F2724ADA02D00DBE3CD /* PushlogUITests.swift */; };
 		0DD87F3E24ADA08900DBE3CD /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F3D24ADA08900DBE3CD /* TabBarView.swift */; };
 		0DD87F4024ADA0AC00DBE3CD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F3F24ADA0AC00DBE3CD /* DashboardView.swift */; };
-		0DD87F4224ADA0B400DBE3CD /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4124ADA0B400DBE3CD /* LogsView.swift */; };
-		0DD87F4424ADA0C900DBE3CD /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4324ADA0C900DBE3CD /* AppsView.swift */; };
+		0DD87F4224ADA0B400DBE3CD /* EntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4124ADA0B400DBE3CD /* EntriesView.swift */; };
+		0DD87F4424ADA0C900DBE3CD /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4324ADA0C900DBE3CD /* LogsView.swift */; };
 		0DD87F4624ADA0D100DBE3CD /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4524ADA0D100DBE3CD /* MoreView.swift */; };
 		0DD87F4824ADA59600DBE3CD /* DashboardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4724ADA59600DBE3CD /* DashboardCardView.swift */; };
 		0DD87F4A24ADFBDF00DBE3CD /* LogAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */; };
@@ -44,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D403CE324AE1DFA007A1C8A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		0D403CE724AE2867007A1C8A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		0D403CEB24AE6D85007A1C8A /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
+		0D403CED24AE7C11007A1C8A /* MoreCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCardView.swift; sourceTree = "<group>"; };
 		0DD87F0224ADA02A00DBE3CD /* Pushlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pushlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD87F0524ADA02A00DBE3CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DD87F0724ADA02A00DBE3CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +68,8 @@
 		0DD87F2924ADA02D00DBE3CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DD87F3D24ADA08900DBE3CD /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0DD87F3F24ADA0AC00DBE3CD /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		0DD87F4124ADA0B400DBE3CD /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
-		0DD87F4324ADA0C900DBE3CD /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
+		0DD87F4124ADA0B400DBE3CD /* EntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesView.swift; sourceTree = "<group>"; };
+		0DD87F4324ADA0C900DBE3CD /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		0DD87F4524ADA0D100DBE3CD /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		0DD87F4724ADA59600DBE3CD /* DashboardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCardView.swift; sourceTree = "<group>"; };
 		0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAppView.swift; sourceTree = "<group>"; };
@@ -161,8 +169,8 @@
 			children = (
 				0DD87F4F24ADFC6A00DBE3CD /* Log */,
 				0DD87F3A24ADA05200DBE3CD /* Dashboard */,
-				0DD87F3924ADA04D00DBE3CD /* Logs */,
-				0DD87F3824ADA04700DBE3CD /* Apps */,
+				0DD87F3924ADA04D00DBE3CD /* Entries */,
+				0DD87F3824ADA04700DBE3CD /* Logs */,
 				0DD87F3724ADA04200DBE3CD /* More */,
 				0DD87F3624ADA03D00DBE3CD /* App */,
 			);
@@ -182,24 +190,26 @@
 			isa = PBXGroup;
 			children = (
 				0DD87F4524ADA0D100DBE3CD /* MoreView.swift */,
+				0D403CED24AE7C11007A1C8A /* MoreCardView.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
 		};
-		0DD87F3824ADA04700DBE3CD /* Apps */ = {
+		0DD87F3824ADA04700DBE3CD /* Logs */ = {
 			isa = PBXGroup;
 			children = (
-				0DD87F4324ADA0C900DBE3CD /* AppsView.swift */,
-			);
-			path = Apps;
-			sourceTree = "<group>";
-		};
-		0DD87F3924ADA04D00DBE3CD /* Logs */ = {
-			isa = PBXGroup;
-			children = (
-				0DD87F4124ADA0B400DBE3CD /* LogsView.swift */,
+				0DD87F4324ADA0C900DBE3CD /* LogsView.swift */,
+				0D403CEB24AE6D85007A1C8A /* LogListView.swift */,
 			);
 			path = Logs;
+			sourceTree = "<group>";
+		};
+		0DD87F3924ADA04D00DBE3CD /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+				0DD87F4124ADA0B400DBE3CD /* EntriesView.swift */,
+			);
+			path = Entries;
 			sourceTree = "<group>";
 		};
 		0DD87F3A24ADA05200DBE3CD /* Dashboard */ = {
@@ -221,6 +231,8 @@
 		0DD87F3C24ADA06500DBE3CD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0D403CE324AE1DFA007A1C8A /* DateUtils.swift */,
+				0D403CE724AE2867007A1C8A /* Enums.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -369,13 +381,17 @@
 				0DD87F4E24ADFC2600DBE3CD /* LogDetailView.swift in Sources */,
 				0DD87F0624ADA02A00DBE3CD /* AppDelegate.swift in Sources */,
 				0DD87F0824ADA02A00DBE3CD /* SceneDelegate.swift in Sources */,
+				0D403CE424AE1DFA007A1C8A /* DateUtils.swift in Sources */,
+				0D403CEC24AE6D85007A1C8A /* LogListView.swift in Sources */,
+				0D403CEE24AE7C11007A1C8A /* MoreCardView.swift in Sources */,
 				0DD87F4024ADA0AC00DBE3CD /* DashboardView.swift in Sources */,
 				0DD87F4A24ADFBDF00DBE3CD /* LogAppView.swift in Sources */,
-				0DD87F4424ADA0C900DBE3CD /* AppsView.swift in Sources */,
+				0DD87F4424ADA0C900DBE3CD /* LogsView.swift in Sources */,
+				0D403CE824AE2867007A1C8A /* Enums.swift in Sources */,
 				0DD87F4C24ADFC0300DBE3CD /* LogTitleView.swift in Sources */,
 				0DD87F3E24ADA08900DBE3CD /* TabBarView.swift in Sources */,
 				0DD87F0A24ADA02A00DBE3CD /* ContentView.swift in Sources */,
-				0DD87F4224ADA0B400DBE3CD /* LogsView.swift in Sources */,
+				0DD87F4224ADA0B400DBE3CD /* EntriesView.swift in Sources */,
 				0DD87F4624ADA0D100DBE3CD /* MoreView.swift in Sources */,
 				0DD87F4824ADA59600DBE3CD /* DashboardCardView.swift in Sources */,
 			);

@@ -8,19 +8,12 @@
 
 import SwiftUI
 
-public enum DateFilter {
-    case Today
-    case Last7Days
-    case LastMonth
-    case LastYear
-}
-
 struct DashboardView: View {
     
     @Binding var tabBarSelection: TabBarSelection
     
-    @State private var showDateSelector = false
-    @State private var dateFilter: DateFilter = .Last7Days
+    @Binding var dateFilter: DateFilter
+    @Binding var entryFilter: EntryFilter
     
     var body: some View {
         NavigationView {
@@ -35,44 +28,33 @@ struct DashboardView: View {
                         }.pickerStyle(SegmentedPickerStyle())
                     }.padding(.top, 5).padding(.bottom, 7)
                     HStack {
-                        DashboardCardView(title: "Logs", count: 7750, color: UIColor.systemGray, action: {
+                        DashboardCardView(title: "Entries", count: 7750, color: UIColor.systemGray, action: {
+                            self.entryFilter = .All
                             self.switchTabItem(newTabSelection: .Logs)
                         })
-                        DashboardCardView(title: "Warn", count: 123, color: UIColor.systemOrange, action: {
+                        DashboardCardView(title: "Info", count: 123, color: UIColor.systemOrange, action: {
+                            self.entryFilter = .Info
                             self.switchTabItem(newTabSelection: .Logs)
                         })
                     }
                     HStack {
                         DashboardCardView(title: "Errors", count: 12, color: UIColor.systemRed, action: {
+                            self.entryFilter = .Errors
                             self.switchTabItem(newTabSelection: .Logs)
                         })
-                        DashboardCardView(title: "Apps", count: 3, color: UIColor.systemIndigo, action: {
+                        DashboardCardView(title: "Logs", count: 3, color: UIColor.systemIndigo, action: {
                             self.switchTabItem(newTabSelection: .Apps)
                         })
                     }.padding(.bottom, 7)
                     ForEach(1...10, id: \.self) {_ in
-                        ZStack(alignment: .leading) {
-                            RoundedRectangle(cornerRadius: 10)
-                                .shadow(radius: 3)
-                                .foregroundColor(Color.white)
-                            VStack(alignment: .leading) {
-                                Text("Node.js Playzlib Backend").fontWeight(.semibold).font(.system(size: 20)).padding(.bottom, -6)
-                                HStack {
-                                    RoundedRectangle(cornerRadius: 4).frame(width: 80, height: 25).foregroundColor(Color(UIColor.systemRed)).overlay(Text("Error").foregroundColor(Color.white).fontWeight(.bold))
-                                    Text("02.07.2020 15:23").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray))
-                                    Spacer()
-                                    Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
-                                }
-                                Text("SSH Host Authentication Failed for this stupid backend").lineLimit(1)
-                            }.padding()
-                        }.padding(.bottom, 5)
+                        LogAppView(logName: "Node.js Playzlib Backend", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
                     }
-                }.listRowInsets(EdgeInsets()).navigationBarTitle("Dashboard")
+                }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())
-                    .navigationViewStyle(StackNavigationViewStyle())
-                    .onAppear {
-                        self.setupUI()
-                }
+            }.navigationBarTitle("Dashboard")
+                .navigationViewStyle(StackNavigationViewStyle())
+                .onAppear {
+                    self.setupUI()
             }
         }
     }

@@ -19,22 +19,25 @@ struct TabBarView: View {
     
     @State private var tabBarSelection: TabBarSelection = .Dashboard
     
+    @State private var dateFilter: DateFilter = .Last7Days
+    @State private var entryFilter: EntryFilter = .All
+    
     var body: some View {
         TabView(selection: $tabBarSelection) {
-            DashboardView(tabBarSelection: $tabBarSelection)
+            DashboardView(tabBarSelection: $tabBarSelection, dateFilter: $dateFilter, entryFilter: $entryFilter)
                 .tabItem {
                     Image(systemName: "speedometer").imageScale(.large)
                     Text("Dashboard")
             }.tag(TabBarSelection.Dashboard)
-            LogsView()
+            EntriesView(dateFilter: $dateFilter, entryFilter: $entryFilter)
                 .tabItem {
                     Image(systemName: "list.dash").imageScale(.large)
-                    Text("Logs")
+                    Text("Entries")
             }.tag(TabBarSelection.Logs)
-            AppsView()
+            LogsView()
                 .tabItem {
                     Image(systemName: "square.grid.2x2.fill").imageScale(.large)
-                    Text("Apps")
+                    Text("Logs")
             }.tag(TabBarSelection.Apps)
             MoreView()
                 .tabItem {
