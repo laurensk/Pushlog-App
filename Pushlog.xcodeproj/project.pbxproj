@@ -15,6 +15,15 @@
 		0DD87F1224ADA02C00DBE3CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD87F1024ADA02C00DBE3CD /* LaunchScreen.storyboard */; };
 		0DD87F1D24ADA02C00DBE3CD /* PushlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F1C24ADA02C00DBE3CD /* PushlogTests.swift */; };
 		0DD87F2824ADA02D00DBE3CD /* PushlogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F2724ADA02D00DBE3CD /* PushlogUITests.swift */; };
+		0DD87F3E24ADA08900DBE3CD /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F3D24ADA08900DBE3CD /* TabBarView.swift */; };
+		0DD87F4024ADA0AC00DBE3CD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F3F24ADA0AC00DBE3CD /* DashboardView.swift */; };
+		0DD87F4224ADA0B400DBE3CD /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4124ADA0B400DBE3CD /* LogsView.swift */; };
+		0DD87F4424ADA0C900DBE3CD /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4324ADA0C900DBE3CD /* AppsView.swift */; };
+		0DD87F4624ADA0D100DBE3CD /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4524ADA0D100DBE3CD /* MoreView.swift */; };
+		0DD87F4824ADA59600DBE3CD /* DashboardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4724ADA59600DBE3CD /* DashboardCardView.swift */; };
+		0DD87F4A24ADFBDF00DBE3CD /* LogAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */; };
+		0DD87F4C24ADFC0300DBE3CD /* LogTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */; };
+		0DD87F4E24ADFC2600DBE3CD /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4D24ADFC2600DBE3CD /* LogDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		0DD87F2324ADA02D00DBE3CD /* PushlogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushlogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD87F2724ADA02D00DBE3CD /* PushlogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushlogUITests.swift; sourceTree = "<group>"; };
 		0DD87F2924ADA02D00DBE3CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DD87F3D24ADA08900DBE3CD /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		0DD87F3F24ADA0AC00DBE3CD /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		0DD87F4124ADA0B400DBE3CD /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
+		0DD87F4324ADA0C900DBE3CD /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
+		0DD87F4524ADA0D100DBE3CD /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		0DD87F4724ADA59600DBE3CD /* DashboardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCardView.swift; sourceTree = "<group>"; };
+		0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAppView.swift; sourceTree = "<group>"; };
+		0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleView.swift; sourceTree = "<group>"; };
+		0DD87F4D24ADFC2600DBE3CD /* LogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +119,9 @@
 			children = (
 				0DD87F0524ADA02A00DBE3CD /* AppDelegate.swift */,
 				0DD87F0724ADA02A00DBE3CD /* SceneDelegate.swift */,
-				0DD87F0924ADA02A00DBE3CD /* ContentView.swift */,
+				0DD87F3524ADA03600DBE3CD /* Views */,
+				0DD87F3B24ADA06000DBE3CD /* Logic */,
+				0DD87F3C24ADA06500DBE3CD /* Utils */,
 				0DD87F0B24ADA02C00DBE3CD /* Assets.xcassets */,
 				0DD87F1024ADA02C00DBE3CD /* LaunchScreen.storyboard */,
 				0DD87F1324ADA02C00DBE3CD /* Info.plist */,
@@ -134,6 +154,85 @@
 				0DD87F2924ADA02D00DBE3CD /* Info.plist */,
 			);
 			path = PushlogUITests;
+			sourceTree = "<group>";
+		};
+		0DD87F3524ADA03600DBE3CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DD87F4F24ADFC6A00DBE3CD /* Log */,
+				0DD87F3A24ADA05200DBE3CD /* Dashboard */,
+				0DD87F3924ADA04D00DBE3CD /* Logs */,
+				0DD87F3824ADA04700DBE3CD /* Apps */,
+				0DD87F3724ADA04200DBE3CD /* More */,
+				0DD87F3624ADA03D00DBE3CD /* App */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0DD87F3624ADA03D00DBE3CD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0DD87F3D24ADA08900DBE3CD /* TabBarView.swift */,
+				0DD87F0924ADA02A00DBE3CD /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0DD87F3724ADA04200DBE3CD /* More */ = {
+			isa = PBXGroup;
+			children = (
+				0DD87F4524ADA0D100DBE3CD /* MoreView.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		0DD87F3824ADA04700DBE3CD /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				0DD87F4324ADA0C900DBE3CD /* AppsView.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		0DD87F3924ADA04D00DBE3CD /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				0DD87F4124ADA0B400DBE3CD /* LogsView.swift */,
+			);
+			path = Logs;
+			sourceTree = "<group>";
+		};
+		0DD87F3A24ADA05200DBE3CD /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				0DD87F3F24ADA0AC00DBE3CD /* DashboardView.swift */,
+				0DD87F4724ADA59600DBE3CD /* DashboardCardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		0DD87F3B24ADA06000DBE3CD /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		0DD87F3C24ADA06500DBE3CD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0DD87F4F24ADFC6A00DBE3CD /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */,
+				0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */,
+				0DD87F4D24ADFC2600DBE3CD /* LogDetailView.swift */,
+			);
+			path = Log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +366,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD87F4E24ADFC2600DBE3CD /* LogDetailView.swift in Sources */,
 				0DD87F0624ADA02A00DBE3CD /* AppDelegate.swift in Sources */,
 				0DD87F0824ADA02A00DBE3CD /* SceneDelegate.swift in Sources */,
+				0DD87F4024ADA0AC00DBE3CD /* DashboardView.swift in Sources */,
+				0DD87F4A24ADFBDF00DBE3CD /* LogAppView.swift in Sources */,
+				0DD87F4424ADA0C900DBE3CD /* AppsView.swift in Sources */,
+				0DD87F4C24ADFC0300DBE3CD /* LogTitleView.swift in Sources */,
+				0DD87F3E24ADA08900DBE3CD /* TabBarView.swift in Sources */,
 				0DD87F0A24ADA02A00DBE3CD /* ContentView.swift in Sources */,
+				0DD87F4224ADA0B400DBE3CD /* LogsView.swift in Sources */,
+				0DD87F4624ADA0D100DBE3CD /* MoreView.swift in Sources */,
+				0DD87F4824ADA59600DBE3CD /* DashboardCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
