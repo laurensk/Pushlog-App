@@ -19,11 +19,10 @@ struct LogsView: View {
                 }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())
             }.navigationBarTitle("Logs")
-                .navigationViewStyle(StackNavigationViewStyle())
                 .onAppear {
                     self.setupUI()
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     func setupUI() {

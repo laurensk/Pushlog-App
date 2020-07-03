@@ -39,11 +39,10 @@ struct EntriesView: View {
                 }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())
             }.navigationBarTitle("Entries")
-                .navigationViewStyle(StackNavigationViewStyle())
                 .onAppear {
                     self.setupUI()
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     func setupUI() {

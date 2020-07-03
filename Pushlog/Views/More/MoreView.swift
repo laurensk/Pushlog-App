@@ -13,7 +13,6 @@ struct MoreView: View {
         NavigationView {
             VStack {
                 List {
-                    
                     MoreCardView(childView: AnyView(VStack(alignment: .leading) {
                         Text("DisplayName")
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
@@ -42,11 +41,10 @@ struct MoreView: View {
                 }
                 
             }.navigationBarTitle("More")
-                .navigationViewStyle(StackNavigationViewStyle())
                 .onAppear {
                     self.setupUI()
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     func setupUI() {

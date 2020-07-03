@@ -58,11 +58,10 @@ struct DashboardView: View {
                 }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())
             }.navigationBarTitle("Dashboard")
-                .navigationViewStyle(StackNavigationViewStyle())
                 .onAppear {
                     self.setupUI()
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     func setupUI() {

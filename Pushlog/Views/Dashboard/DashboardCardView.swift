@@ -18,10 +18,17 @@ struct DashboardCardView: View {
     var body: some View {
         Button(action: action) {
             ZStack(alignment: .leading) {
-                RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color("cardColor"))
-                .shadow(radius: 3)
-                .aspectRatio(1.0, contentMode: .fit)
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color("cardColor"))
+                        .shadow(radius: 3)
+                        .frame(height: 150)
+                } else {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color("cardColor"))
+                        .shadow(radius: 3)
+                        .aspectRatio(1.0, contentMode: .fit)
+                }
                 VStack(alignment: .leading) {
                     Text("\(title)").font(.system(size: 20)).fontWeight(.semibold).padding(.bottom, 5).foregroundColor(Color(color))
                     Text("\(count)").font(.system(size: 40, design: .rounded)).fontWeight(.bold).foregroundColor(Color("dashboardCardTextColor"))
