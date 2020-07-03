@@ -9,15 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var appUser: AppUser = UserPersistence.getUser()
+    
     var body: some View {
         VStack {
-            if UserPersistence.getUser().loggedIn == true {
+            if appUser.loggedIn == true {
                 TabBarView()
             } else {
-                IntroductionView()
+                IntroductionView(update: updateAppUser)
             }
         }
     }
+    
+    func updateAppUser() {
+        appUser = UserPersistence.getUser()
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

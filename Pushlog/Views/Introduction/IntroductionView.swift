@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct IntroductionView: View {
+    
+    let update: () -> Void
+    
     var body: some View {
         VStack(alignment: .center) {
             
@@ -36,12 +39,7 @@ struct IntroductionView: View {
     }
     
     func login() {
-        
-    }
-}
-
-struct IntroductionView_Previews: PreviewProvider {
-    static var previews: some View {
-        IntroductionView()
+        //UserPersistence.setUser(loggedIn: true, userToken: "", userDisplayName: "Laurens")
+        self.update()
     }
 }

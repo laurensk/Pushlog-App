@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AppUser {
+struct AppUser: Codable {
     let loggedIn: Bool
     let userToken: String
     let userDisplayName: String
