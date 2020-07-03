@@ -47,7 +47,13 @@ struct DashboardView: View {
                         })
                     }.padding(.bottom, 7)
                     ForEach(1...10, id: \.self) {_ in
-                        LogAppView(logName: "Node.js Playzlib Backend", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
+                        
+                        ZStack {
+                            LogAppView(logName: "Node.js Playzlib Backend", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
+                            NavigationLink(destination: LogDetailView()) {
+                                EmptyView()
+                            }.frame(width: 0).hidden()
+                        }
                     }
                 }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())

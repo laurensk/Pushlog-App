@@ -10,7 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabBarView()
+        VStack {
+            if UserPersistence.getUser().loggedIn == true {
+                TabBarView()
+            } else {
+                IntroductionView()
+            }
+        }
     }
 }
 

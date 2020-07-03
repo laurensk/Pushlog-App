@@ -9,9 +9,14 @@
 import SwiftUI
 
 struct LogDetailView: View {
+    
     var body: some View {
-        EmptyView()
-        // TODO: Create log detail view
+        NavigationView {
+            VStack {
+                Text("")
+                Spacer()
+            }.navigationBarTitle("Node.JS Backend")
+        }
     }
 }
 
