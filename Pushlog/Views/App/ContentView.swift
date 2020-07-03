@@ -24,6 +24,9 @@ struct ContentView: View {
     
     func updateAppUser() {
         appUser = UserPersistence.getUser()
+        
+        // debug
+        UserPersistence.setUser(loggedIn: false, userToken: "", userDisplayName: "Laurens")
     }
     
 }

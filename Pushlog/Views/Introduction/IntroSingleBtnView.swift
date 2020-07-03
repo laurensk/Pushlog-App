@@ -14,8 +14,6 @@ struct IntroSingleBtnView: View {
     
     var body: some View {
         Button(action: {
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.success)
             self.action()
         }) {
             Text("Sign Up")

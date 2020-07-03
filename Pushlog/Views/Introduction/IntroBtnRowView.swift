@@ -16,8 +16,6 @@ struct IntroBtnRowView: View {
     var body: some View {
         HStack {
             Button(action: {
-                let generator = UINotificationFeedbackGenerator()
-                generator.notificationOccurred(.success)
                 self.actionLeft()
             }) {
                 Text("Custom API")
@@ -31,8 +29,6 @@ struct IntroBtnRowView: View {
             }.padding(.leading).padding(.trailing, 4)
             
             Button(action: {
-                let generator = UINotificationFeedbackGenerator()
-                generator.notificationOccurred(.success)
                 self.actionRight()
             }) {
                 Text("Login")

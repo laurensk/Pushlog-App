@@ -39,7 +39,10 @@ struct IntroductionView: View {
     }
     
     func login() {
-        //UserPersistence.setUser(loggedIn: true, userToken: "", userDisplayName: "Laurens")
+        
+        // debug
+        UserPersistence.setUser(loggedIn: true, userToken: "", userDisplayName: "Laurens")
+
         self.update()
     }
 }
