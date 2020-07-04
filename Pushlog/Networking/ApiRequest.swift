@@ -10,7 +10,7 @@ import Foundation
 
 public class ApiRequest {
     
-    static func postRequest<T: Codable>(apiUrl: URL, path: String, body: [String: Any], type: T.Type, completion: @escaping (User?, PushlogError?) -> Void) {
+    static func postRequest<T: Codable>(apiUrl: URL, path: String, body: [String: Any], type: T.Type, completion: @escaping (Any?, PushlogError?) -> Void) {
         
         let jsonData = try? JSONSerialization.data(withJSONObject: body)
         
@@ -26,19 +26,16 @@ public class ApiRequest {
                     return
                 }
             }
-            completion(nil, PushlogError.UnknownError)
+            completion(nil, PushlogError.NetworkError)
         }.resume()
         
     }
     
-    static func getRequest<T: Codable>(apiUrl: URL, path: String, body: [String: Any], type: T.Type, completion: @escaping (User?, PushlogError?) -> Void) {
-        
-        let jsonData = try? JSONSerialization.data(withJSONObject: body)
+    static func getRequest<T: Codable>(apiUrl: URL, path: String, type: T.Type, completion: @escaping (Any?, PushlogError?) -> Void) {
         
         var request = URLRequest(url: apiUrl.appendingPathComponent(path))
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        request.httpBody = jsonData
+        request.httpMethod = "GET"
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
@@ -47,7 +44,7 @@ public class ApiRequest {
                     return
                 }
             }
-            completion(nil, PushlogError.UnknownError)
+            completion(nil, PushlogError.NetworkError)
         }.resume()
         
     }
