@@ -9,38 +9,172 @@
 import SwiftUI
 
 struct MoreView: View {
+    
+    @State private var user = UserPersistence.getUser()
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     MoreCardView(childView: AnyView(VStack(alignment: .leading) {
-                        Text("DisplayName")
+                        HStack {
+                            Image(systemName: "person.crop.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25)
+                            Text("Name")
+                                .fontWeight(.semibold)
+                                .padding(.leading, 5)
+                            Spacer()
+                            Text(user.userDisplayName)
+                        }.padding(.horizontal)
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
                     
                     MoreCardView(childView: AnyView(VStack(alignment: .leading) {
-                        Text("Show user token")
-                        Text("Add token to password manager")
-                        Text("Delete account and data")
-                        Text("Log out")
+                        VStack {
+                            HStack {
+                                Image(systemName: "lock.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("Show user token")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                                Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
+                            }.padding(.horizontal).padding(.bottom)
+                            HStack {
+                                Image(systemName: "lock.shield")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("Add to password manager")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                                Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
+                            }.padding(.horizontal).padding(.bottom)
+                            HStack {
+                                Image(systemName: "trash.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("Delete account and data")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                                Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
+                            }.padding(.horizontal).padding(.bottom)
+                            HStack {
+                                Image(systemName: "arrow.down.left.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("Log out")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                                Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
+                            }.padding(.horizontal)
+                        }
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
                     
                     MoreCardView(childView: AnyView(VStack(alignment: .leading) {
-                        Text("Tutorial for Node.JS")
-                        Text("Tutorial for Java")
-                        Text("Tutorial for PHP")
-                        Text("Tutorial for Python")
+                        VStack {
+                            HStack {
+                                Image(systemName: "book.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("Tutorials")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                            }.padding(.horizontal).padding(.bottom, 5)
+                            HStack {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .frame(height: 60).shadow(radius: 2)
+                                    .foregroundColor(Color("cardColor"))
+                                    .overlay(Text("Node.JS"))
+                                RoundedRectangle(cornerRadius: 5)
+                                    .frame(height: 60).shadow(radius: 2)
+                                    .foregroundColor(Color("cardColor"))
+                                    .overlay(Text("Java"))
+                            }
+                            HStack {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .frame(height: 60).shadow(radius: 2)
+                                    .foregroundColor(Color("cardColor"))
+                                    .overlay(Text("PHP"))
+                                RoundedRectangle(cornerRadius: 5)
+                                    .frame(height: 60).shadow(radius: 2)
+                                    .foregroundColor(Color("cardColor"))
+                                    .overlay(Text("Python"))
+                            }
+                        }
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
                     
                     MoreCardView(childView: AnyView(VStack(alignment: .leading) {
-                        Text("Developers")
-                        Text("Contact")
-                        Text("Twitter")
-                        Text("GitHub")
-                        Text("Privacy Policy")
+                        VStack {
+                            HStack {
+                                Image(systemName: "person.2.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("Developers")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                                Text("Gebes & Laurens")
+                            }.padding(.horizontal).padding(.bottom)
+                            HStack {
+                                Image(systemName: "envelope")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("Contact")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                                Text("pushlog@laurensk.at")
+                            }.padding(.horizontal).padding(.bottom)
+                            HStack {
+                                Image(systemName: "pencil.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("Twitter")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                                Text("@PushlogApp")
+                            }.padding(.horizontal).padding(.bottom)
+                            HStack {
+                                Image(systemName: "chevron.left.slash.chevron.right")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("GitHub")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                                Text("/PushlogApp")
+                            }.padding(.horizontal).padding(.bottom)
+                            HStack {
+                                Image(systemName: "lock.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 25)
+                                Text("Privacy Policy")
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 5)
+                                Spacer()
+                                Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
+                            }.padding(.horizontal)
+                        }
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
                 }
                 
-            }.navigationBarTitle("More")
+            }.navigationBarTitle("Pushlog")
                 .onAppear {
                     self.setupUI()
             }
