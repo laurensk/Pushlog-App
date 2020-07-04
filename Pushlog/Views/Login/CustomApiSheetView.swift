@@ -16,7 +16,9 @@ struct CustomApiSheetView: View {
     
     @State private var newApiUrl = ""
     @State private var showConfirmDialog = false
-    @State private var showInvalidUrlDialog = false
+    
+    @State private var showErrorAlert = false
+    @State private var error = ""
     
     
     var body: some View {
@@ -66,7 +68,7 @@ struct CustomApiSheetView: View {
                 Text("If you've already deployed the Pushlog API onto your own server, enter the custom API endpoint URL above. Check GitHub/PushlogApp/pushlogBackend for a tutorial.")
                     .font(.callout).foregroundColor(Color(UIColor.systemGray)).padding().padding(.top, 10)
             }
-        }.alert(isPresented: $showInvalidUrlDialog) {
+        }.alert(isPresented: $showErrorAlert) {
             Alert(title: Text("Error"), message: Text("The URL you've entered is invalid! Please try again."), dismissButton: .default(Text("OK")))
         }
     }
@@ -78,7 +80,8 @@ struct CustomApiSheetView: View {
             service.setApiUrl(newApiUrl)
             self.showConfirmDialog.toggle()
         } else {
-            self.showInvalidUrlDialog.toggle()
+            self.error = "The URL you've entered is invalid! Please try again."
+            self.showErrorAlert.toggle()
         }
         
     }

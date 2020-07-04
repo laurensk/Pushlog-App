@@ -22,6 +22,7 @@ public class ApiService {
     // MARK: - User
     
     func createUser(displayName: String, completion: @escaping (Any?, PushlogError?) -> Void) {
+        if displayName.count < 1 { completion(nil, PushlogError.DisplayNameNotEntered); return }
         if displayName.count > 32 { completion(nil, PushlogError.DisplayNameTooLong); return }
         ApiRequest.postRequest(apiUrl: apiUrl, path: "/user", body: ["displayName": "\(displayName)"], type: User.self, completion: completion)
     }

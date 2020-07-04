@@ -16,6 +16,7 @@ struct SignUpSheetView: View {
     @State private var token = ""
     
     @State private var showErrorAlert = false
+    @State private var error = ""
     
     var body: some View {
         VStack {
@@ -60,7 +61,7 @@ struct SignUpSheetView: View {
                     .font(.callout).foregroundColor(Color(UIColor.systemGray)).padding().padding(.top, 10)
             }
         }.alert(isPresented: $showErrorAlert) {
-            Alert(title: Text("Error"), message: Text(PushlogError.NetworkError.rawValue), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Error"), message: Text(error), dismissButton: .default(Text("OK")))
         }
     }
     
@@ -75,6 +76,7 @@ struct SignUpSheetView: View {
                 }
             } else {
                 ErrorHandling.errorHandling.throwError(error: error!, showError: false)
+                self.error = error!.rawValue
                 self.showErrorAlert.toggle()
             }
         })

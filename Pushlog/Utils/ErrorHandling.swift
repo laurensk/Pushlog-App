@@ -9,9 +9,18 @@
 import Foundation
 
 public enum PushlogError: String {
-    case DisplayNameTooLong = "Display name is too long"
+    
+    // MARK: Login/Sign up
+    case DisplayNameTooLong = "The display name you've entered is too long. It must be smaller than 32 characters."
+    case DisplayNameNotEntered = "Please enter a display name for your user account."
+    case TokenIsEmpty = "Please enter a token."
+    case TokenInvalid = "The token you've entered is not valid. Please try again or sign up for a new token."
+    
+    // MARK: Networking
     case NetworkError = "A networking error occurred. Make sure you have an active internet connection or try again later."
-    case UnknownError = "Unknown Error"
+    
+    // MARK: Unknown Error
+    case UnknownError = "A unknown error occurred. If you think that's our vault, please file a bug."
 }
 
 public class ErrorHandling {
