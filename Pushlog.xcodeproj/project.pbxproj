@@ -12,7 +12,7 @@
 		0D403CEC24AE6D85007A1C8A /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CEB24AE6D85007A1C8A /* LogListView.swift */; };
 		0D403CEE24AE7C11007A1C8A /* MoreCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CED24AE7C11007A1C8A /* MoreCardView.swift */; };
 		0D403CF224AF0CD1007A1C8A /* ApiUrlPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CF124AF0CD1007A1C8A /* ApiUrlPersistence.swift */; };
-		0D403CF524AF0D31007A1C8A /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CF424AF0D31007A1C8A /* Networking.swift */; };
+		0D403CF524AF0D31007A1C8A /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CF424AF0D31007A1C8A /* ApiService.swift */; };
 		0D403CF824AF1BBB007A1C8A /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CF724AF1BBB007A1C8A /* Log.swift */; };
 		0D403CFA24AF1BC3007A1C8A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CF924AF1BC3007A1C8A /* Entry.swift */; };
 		0D403CFC24AF1C14007A1C8A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CFB24AF1C14007A1C8A /* User.swift */; };
@@ -44,6 +44,8 @@
 		0DD87F4A24ADFBDF00DBE3CD /* LogAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */; };
 		0DD87F4C24ADFC0300DBE3CD /* LogTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */; };
 		0DD87F4E24ADFC2600DBE3CD /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4D24ADFC2600DBE3CD /* LogDetailView.swift */; };
+		0DD9635D24B0AE29007D5D8C /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9635C24B0AE29007D5D8C /* ErrorHandling.swift */; };
+		0DD9635F24B0B7EA007D5D8C /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9635E24B0B7EA007D5D8C /* ApiRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +71,7 @@
 		0D403CEB24AE6D85007A1C8A /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
 		0D403CED24AE7C11007A1C8A /* MoreCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCardView.swift; sourceTree = "<group>"; };
 		0D403CF124AF0CD1007A1C8A /* ApiUrlPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrlPersistence.swift; sourceTree = "<group>"; };
-		0D403CF424AF0D31007A1C8A /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		0D403CF424AF0D31007A1C8A /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		0D403CF724AF1BBB007A1C8A /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		0D403CF924AF1BC3007A1C8A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		0D403CFB24AF1C14007A1C8A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -108,6 +110,8 @@
 		0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAppView.swift; sourceTree = "<group>"; };
 		0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleView.swift; sourceTree = "<group>"; };
 		0DD87F4D24ADFC2600DBE3CD /* LogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
+		0DD9635C24B0AE29007D5D8C /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		0DD9635E24B0B7EA007D5D8C /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +176,8 @@
 		0DBF3E7D24B08C3000C2BA4B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				0D403CF424AF0D31007A1C8A /* Networking.swift */,
+				0D403CF424AF0D31007A1C8A /* ApiService.swift */,
+				0DD9635E24B0B7EA007D5D8C /* ApiRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			children = (
 				0D403CE324AE1DFA007A1C8A /* DateUtils.swift */,
 				0D403CE724AE2867007A1C8A /* Enums.swift */,
+				0DD9635C24B0AE29007D5D8C /* ErrorHandling.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -462,12 +468,13 @@
 			files = (
 				0D403CFE24AF2C2D007A1C8A /* UserPersistence.swift in Sources */,
 				0D403CFA24AF1BC3007A1C8A /* Entry.swift in Sources */,
+				0DD9635D24B0AE29007D5D8C /* ErrorHandling.swift in Sources */,
 				0DD87F4E24ADFC2600DBE3CD /* LogDetailView.swift in Sources */,
 				0D80D3D124AFC27B003BCDCD /* IntroBtnRowView.swift in Sources */,
 				0DD87F0624ADA02A00DBE3CD /* AppDelegate.swift in Sources */,
 				0D80D3CB24AFC1E7003BCDCD /* IntroFeatureViews.swift in Sources */,
 				0DD87F0824ADA02A00DBE3CD /* SceneDelegate.swift in Sources */,
-				0D403CF524AF0D31007A1C8A /* Networking.swift in Sources */,
+				0D403CF524AF0D31007A1C8A /* ApiService.swift in Sources */,
 				0D403D0124AF2D97007A1C8A /* IntroductionView.swift in Sources */,
 				0D403CE424AE1DFA007A1C8A /* DateUtils.swift in Sources */,
 				0D80D3C924AFC16E003BCDCD /* IntroHeaderView.swift in Sources */,
@@ -491,6 +498,7 @@
 				0DD87F4824ADA59600DBE3CD /* DashboardCardView.swift in Sources */,
 				0D403CFC24AF1C14007A1C8A /* User.swift in Sources */,
 				0D80D3C424AFACBA003BCDCD /* IntroFeatureView.swift in Sources */,
+				0DD9635F24B0B7EA007D5D8C /* ApiRequest.swift in Sources */,
 				0D9317A924B08DA40001E918 /* CustomApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

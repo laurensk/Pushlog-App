@@ -16,7 +16,7 @@ struct IntroductionView: View {
         VStack(alignment: .center) {
             
             Spacer()
-
+            
             IntroHeaderView()
             
             IntroFeatureViews()
@@ -36,13 +36,23 @@ struct IntroductionView: View {
     
     func customAPI() {
         
+        let service = ApiService()
+        service.createUser(displayName: "laurensTest", completion: { user, error in
+            if error == nil {
+                if let user = user {
+                    print(user.displayName)
+                }
+            } else {
+                print(error!.rawValue)
+            }
+        })
     }
     
     func login() {
         
         // debug
         UserPersistence.setUser(loggedIn: true, userToken: "", userDisplayName: "Laurens")
-
+        
         self.update()
     }
 }

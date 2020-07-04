@@ -10,6 +10,6 @@ import Foundation
 
 struct CustomApi: Codable {
     let isSet: Bool
-    let apiUrl: String
+    let apiUrl: URL
 }
 

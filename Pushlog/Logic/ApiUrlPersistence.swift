@@ -10,7 +10,7 @@ import Foundation
 
 public class ApiUrlPersistence {
     
-    static let gebesApiUrl = "https://api.gebes.eu/pushlog/"
+    static let gebesApiUrl = URL(string: "https://api.gebes.eu/pushlog")!
     
     static func getApiUrl() -> CustomApi {
         let defaults = UserDefaults.standard
@@ -25,7 +25,7 @@ public class ApiUrlPersistence {
         
     }
     
-    static func setApiUrl(apiUrl: String) {
+    static func setApiUrl(apiUrl: URL) {
         let defaults = UserDefaults.standard
         let customApi: CustomApi = CustomApi(isSet: true, apiUrl: apiUrl)
         defaults.set(try? PropertyListEncoder().encode(customApi), forKey: "customApi")
