@@ -15,6 +15,8 @@ struct SignUpSheetView: View {
     @State private var displayName = ""
     @State private var token = ""
     
+    @State private var showErrorAlert = false
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -54,8 +56,11 @@ struct SignUpSheetView: View {
                         .padding(.bottom)
                 }.padding(.horizontal)
                 
-                Text("To see your personal token needed for server-side setup, head over to \"More\" in the app later on.").font(.callout).foregroundColor(Color(UIColor.systemGray)).padding().padding(.top, 10)
+                Text("To see your personal token needed for server-side setup, head over to \"More\" in the app later on. You must provide a display name and it can't be longer than 32 characters.")
+                    .font(.callout).foregroundColor(Color(UIColor.systemGray)).padding().padding(.top, 10)
             }
+        }.alert(isPresented: $showErrorAlert) {
+            Alert(title: Text("Error"), message: Text(PushlogError.NetworkError.rawValue), dismissButton: .default(Text("OK")))
         }
     }
     
@@ -66,11 +71,11 @@ struct SignUpSheetView: View {
             if error == nil {
                 if let user = user as? User {
                     UserPersistence.setUser(loggedIn: true, userToken: user.userToken, userDisplayName: user.displayName)
-                    print(user)
                     self.update()
                 }
             } else {
-                print(error!.rawValue)
+                ErrorHandling.errorHandling.throwError(error: error!, showError: false)
+                self.showErrorAlert.toggle()
             }
         })
     }

@@ -77,7 +77,6 @@ struct CustomApiSheetView: View {
         if let newApiUrl = URL(string: newApiUrl) {
             service.setApiUrl(newApiUrl)
             self.showConfirmDialog.toggle()
-            print("did it")
         } else {
             self.showInvalidUrlDialog.toggle()
         }

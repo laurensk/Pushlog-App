@@ -13,6 +13,7 @@ struct LoginSheetView: View {
     let update: () -> Void
     
     @State private var token = ""
+    @State private var showErrorAlert = false
     
     var body: some View {
         VStack {
@@ -55,22 +56,25 @@ struct LoginSheetView: View {
                 
                 Text("Paste your token in the text field above in order to authenticate. If you dont't have a token or want to start new, sign up instead.").font(.callout).foregroundColor(Color(UIColor.systemGray)).padding().padding(.top, 10)
             }
+        }.alert(isPresented: $showErrorAlert) {
+            Alert(title: Text("Error"), message: Text(PushlogError.NetworkError.rawValue), dismissButton: .default(Text("OK")))
         }
     }
     
     func login() {
         
-//        let service = ApiService()
-//        service.createUser(displayName: "\(displayName)", completion: { user, error in
-//            if error == nil {
-//                if let user = user {
-//                    UserPersistence.setUser(loggedIn: true, userToken: user.userToken, userDisplayName: user.displayName)
-//                    self.update()
-//                }
-//            } else {
-//                print(error!.rawValue)
-//            }
-//        })
+        let service = ApiService()
+        service.loginUser(token: "\(token)", completion: { user, error in
+            if error == nil {
+                if let user = user as? User {
+                    UserPersistence.setUser(loggedIn: true, userToken: user.userToken, userDisplayName: user.displayName)
+                    self.update()
+                }
+            } else {
+                ErrorHandling.errorHandling.throwError(error: error!, showError: false)
+                self.showErrorAlert.toggle()
+            }
+        })
         
     }
 }
