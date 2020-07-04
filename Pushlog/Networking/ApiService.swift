@@ -21,13 +21,14 @@ public class ApiService {
     
     // MARK: - User
     
-    func createUser(displayName: String, completion: @escaping (Any?, PushlogError?) -> Void) {
-        if displayName.count < 1 { completion(nil, PushlogError.DisplayNameNotEntered); return }
-        if displayName.count > 32 { completion(nil, PushlogError.DisplayNameTooLong); return }
+    func createUser(displayName: String, completion: @escaping (Any?, PushlogError?, Error?) -> Void) {
+        if displayName.count < 1 { completion(nil, PushlogError.DisplayNameNotEntered, nil); return }
+        if displayName.count > 32 { completion(nil, PushlogError.DisplayNameTooLong, nil); return }
         ApiRequest.postRequest(apiUrl: apiUrl, path: "/user", body: ["displayName": "\(displayName)"], type: User.self, completion: completion)
     }
     
-    func loginUser(token: String, completion: @escaping (Any?, PushlogError?) -> Void) {
+    func loginUser(token: String, completion: @escaping (Any?, PushlogError?, Error?) -> Void) {
+        if token.isEmpty { completion(nil, PushlogError.TokenIsEmpty, nil); return }
         ApiRequest.getRequest(apiUrl: apiUrl, path: "/user/\(token)", type: User.self, completion: completion)
     }
     

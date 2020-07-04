@@ -68,15 +68,19 @@ struct SignUpSheetView: View {
     func generateToken() {
         
         let service = ApiService()
-        service.createUser(displayName: "\(displayName)", completion: { user, error in
-            if error == nil {
+        service.createUser(displayName: "\(displayName)", completion: { user, localError, apiError in
+            if localError == nil && apiError == nil {
                 if let user = user as? User {
                     UserPersistence.setUser(loggedIn: true, userToken: user.userToken, userDisplayName: user.displayName)
                     self.update()
                 }
+            } else if apiError != nil {
+                ErrorHandling.errorHandling.throwCustomError(error: apiError!.error, showError: false)
+                self.error = apiError!.error
+                self.showErrorAlert.toggle()
             } else {
-                ErrorHandling.errorHandling.throwError(error: error!, showError: false)
-                self.error = error!.rawValue
+                ErrorHandling.errorHandling.throwError(error: localError!, showError: false)
+                self.error = localError!.rawValue
                 self.showErrorAlert.toggle()
             }
         })

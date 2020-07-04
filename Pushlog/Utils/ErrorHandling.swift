@@ -42,4 +42,11 @@ public class ErrorHandling {
         }
     }
     
+    public func throwCustomError(error: String, showError: Bool) {
+        print("[PUSHLOG-ERROR] Error: \(error)")
+        if showError {
+            ErrorHandling.errorPresenter.presentCustomErrorAlert(error: error)
+        }
+    }
+    
 }
