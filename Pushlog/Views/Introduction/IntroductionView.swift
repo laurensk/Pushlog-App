@@ -12,6 +12,9 @@ struct IntroductionView: View {
     
     let update: () -> Void
     
+    @State private var sheetActive = false
+    @State private var sheetSelected: Sheets = .loginSheet
+    
     var body: some View {
         VStack(alignment: .center) {
             
@@ -27,32 +30,37 @@ struct IntroductionView: View {
             
             IntroBtnRowView(actionLeft: customAPI, actionRight: login)
             
-        }
+        }.sheet(isPresented: $sheetActive, content: sheetContent)
     }
     
     func signUp() {
-        
+        self.sheetSelected = .signUpSheet
+        self.sheetActive.toggle()
     }
     
     func customAPI() {
-        
-        let service = ApiService()
-        service.createUser(displayName: "laurensTest", completion: { user, error in
-            if error == nil {
-                if let user = user {
-                    print(user.displayName)
-                }
-            } else {
-                print(error!.rawValue)
-            }
-        })
+        self.sheetSelected = .customApiSheet
+        self.sheetActive.toggle()
     }
     
     func login() {
-        
-        // debug
-        UserPersistence.setUser(loggedIn: true, userToken: "", userDisplayName: "Laurens")
-        
-        self.update()
+        self.sheetSelected = .loginSheet
+        self.sheetActive.toggle()
+    }
+}
+
+extension IntroductionView {
+    enum Sheets {
+        case loginSheet, signUpSheet, customApiSheet
+    }
+    
+    @ViewBuilder func sheetContent() -> some View {
+        if sheetSelected == .loginSheet {
+            LoginSheetView(update: self.update)
+        } else if sheetSelected == .signUpSheet {
+            SignUpSheetView(update: self.update)
+        } else {
+            CustomApiSheetView(update: self.update)
+        }
     }
 }

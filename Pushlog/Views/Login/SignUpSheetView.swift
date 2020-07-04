@@ -1,17 +1,18 @@
 //
-//  LoginSheetView.swift
+//  SignUpSheetView.swift
 //  Pushlog
 //
-//  Created by Laurens on 03.07.20.
+//  Created by Laurens on 04.07.20.
 //  Copyright © 2020 Laurens. All rights reserved.
 //
 
 import SwiftUI
 
-struct LoginSheetView: View {
+struct SignUpSheetView: View {
     
     let update: () -> Void
     
+    @State private var displayName = ""
     @State private var token = ""
     
     var body: some View {
@@ -24,16 +25,16 @@ struct LoginSheetView: View {
                 .frame(width: 180, alignment: .center)
                 .accessibility(hidden: true).padding(.top, 50)
                 
-                Text("Welcome back")
+                Text("Start using")
                     .fontWeight(.black)
                     .font(.system(size: 36)).padding(.top, 20)
                 
-                Text("to Pushlog")
+                Text("Pushlog")
                     .fontWeight(.black)
                     .font(.system(size: 36))
                     .foregroundColor(Color("gradient2")).padding(.bottom, 40)
                 
-                TextField("Your Token", text: $token)
+                TextField("Your Display Name", text: $displayName)
                     .font(.headline)
                     .padding()
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
@@ -42,8 +43,8 @@ struct LoginSheetView: View {
                     .padding(.horizontal)
                     .multilineTextAlignment(.center)
                 
-                Button(action: login) {
-                    Text("Log in")
+                Button(action: generateToken) {
+                    Text("Generate Token")
                         .foregroundColor(.white)
                         .font(.headline)
                         .padding()
@@ -53,29 +54,29 @@ struct LoginSheetView: View {
                         .padding(.bottom)
                 }.padding(.horizontal)
                 
-                Text("Paste your token in the text field above in order to authenticate. If you dont't have a token or want to start new, sign up instead.").font(.callout).foregroundColor(Color(UIColor.systemGray)).padding().padding(.top, 10)
+                Text("To see your personal token needed for server-side setup, head over to \"More\" in the app later on.").font(.callout).foregroundColor(Color(UIColor.systemGray)).padding().padding(.top, 10)
             }
         }
     }
     
-    func login() {
+    func generateToken() {
         
-//        let service = ApiService()
-//        service.createUser(displayName: "\(displayName)", completion: { user, error in
-//            if error == nil {
-//                if let user = user {
-//                    UserPersistence.setUser(loggedIn: true, userToken: user.userToken, userDisplayName: user.displayName)
-//                    self.update()
-//                }
-//            } else {
-//                print(error!.rawValue)
-//            }
-//        })
-        
+        let service = ApiService()
+        service.createUser(displayName: "\(displayName)", completion: { user, error in
+            if error == nil {
+                if let user = user as? User {
+                    UserPersistence.setUser(loggedIn: true, userToken: user.userToken, userDisplayName: user.displayName)
+                    print(user)
+                    self.update()
+                }
+            } else {
+                print(error!.rawValue)
+            }
+        })
     }
 }
 
-struct LoginSheetView_Previews: PreviewProvider {
+struct SignUpSheetView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyView()
     }
