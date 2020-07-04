@@ -9,7 +9,7 @@
 import Foundation
 
 struct Entry: Codable {
-    let timestamp: Int
+    let timestamp: Double
     let value: String
     let level: String
 }

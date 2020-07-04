@@ -36,4 +36,12 @@ public class DateUtils {
         return "\(getDateString(date)) \(getTimeString(date))"
     }
     
+    public static func dateToTimestamp(_ date: Date) -> TimeInterval {
+        return date.timeIntervalSince1970
+    }
+    
+    public static func timestampToDate(_ timestamp: TimeInterval) -> Date {
+        return Date(timeIntervalSinceReferenceDate: timestamp)
+    }
+    
 }
