@@ -10,6 +10,10 @@ import SwiftUI
 
 struct MoreView: View {
     
+    let update: () -> Void
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     @State private var user = UserPersistence.getUser()
     
     let safariView = SafariView()
@@ -67,17 +71,24 @@ struct MoreView: View {
                                 Spacer()
                                 Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
                             }.padding(.horizontal).padding(.bottom)
-                            HStack {
-                                Image(systemName: "arrow.down.left.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25)
-                                Text("Log out")
-                                    .fontWeight(.semibold)
-                                    .padding(.leading, 5)
-                                Spacer()
-                                Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
-                            }.padding(.horizontal)
+                            Button(action: {
+                                MoreActions.logOut(update: self.update)
+                            }) {
+                                HStack {
+                                    Image(systemName: "arrow.down.left.circle")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 25)
+                                        .foregroundColor(Color(colorScheme == .dark ? UIColor.white : UIColor.darkText))
+                                    Text("Log out")
+                                        .fontWeight(.semibold)
+                                        .padding(.leading, 5)
+                                        .foregroundColor(Color(colorScheme == .dark ? UIColor.white : UIColor.darkText))
+                                    Spacer()
+                                    Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
+                                }.padding(.horizontal)
+                            }
+                            
                         }
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
                     
@@ -189,6 +200,6 @@ struct MoreView: View {
 
 struct MoreView_Previews: PreviewProvider {
     static var previews: some View {
-        MoreView()
+        EmptyView()
     }
 }

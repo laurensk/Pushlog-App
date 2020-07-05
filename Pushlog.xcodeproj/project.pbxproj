@@ -30,6 +30,7 @@
 		0D8BB42724B1F3D1003454D9 /* MoreTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BB42624B1F3D1003454D9 /* MoreTutorialView.swift */; };
 		0D8BB42924B1F60B003454D9 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BB42824B1F60B003454D9 /* SafariView.swift */; };
 		0D8BB42C24B20A98003454D9 /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 0D8BB42B24B20A98003454D9 /* SwiftUIRefresh */; };
+		0D8BB42E24B21F11003454D9 /* MoreActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8BB42D24B21F11003454D9 /* MoreActions.swift */; };
 		0D9317A924B08DA40001E918 /* CustomApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9317A824B08DA40001E918 /* CustomApi.swift */; };
 		0DD3B84224B0EB8800014162 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD3B84124B0EB8800014162 /* ErrorPresenter.swift */; };
 		0DD3B84424B1073500014162 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD3B84324B1073500014162 /* Error.swift */; };
@@ -97,6 +98,7 @@
 		0D8BB42424B1F0F9003454D9 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		0D8BB42624B1F3D1003454D9 /* MoreTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTutorialView.swift; sourceTree = "<group>"; };
 		0D8BB42824B1F60B003454D9 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		0D8BB42D24B21F11003454D9 /* MoreActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreActions.swift; sourceTree = "<group>"; };
 		0D9317A824B08DA40001E918 /* CustomApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomApi.swift; sourceTree = "<group>"; };
 		0DBF3E7C24AFCDB700C2BA4B /* Pushlog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pushlog.entitlements; sourceTree = "<group>"; };
 		0DD3B84124B0EB8800014162 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 			children = (
 				0D403CFD24AF2C2D007A1C8A /* UserPersistence.swift */,
 				0D403CF124AF0CD1007A1C8A /* ApiUrlPersistence.swift */,
+				0D8BB42D24B21F11003454D9 /* MoreActions.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				0DD3B84224B0EB8800014162 /* ErrorPresenter.swift in Sources */,
 				0DD87F4224ADA0B400DBE3CD /* EntriesView.swift in Sources */,
 				0D8BB42924B1F60B003454D9 /* SafariView.swift in Sources */,
+				0D8BB42E24B21F11003454D9 /* MoreActions.swift in Sources */,
 				0D403D0324AF2DA4007A1C8A /* LoginSheetView.swift in Sources */,
 				0DD87F4624ADA0D100DBE3CD /* MoreView.swift in Sources */,
 				0DD87F4824ADA59600DBE3CD /* DashboardCardView.swift in Sources */,

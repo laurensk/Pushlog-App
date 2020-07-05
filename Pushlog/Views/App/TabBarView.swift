@@ -17,6 +17,8 @@ public enum TabBarSelection: Hashable {
 
 struct TabBarView: View {
     
+    let update: () -> Void
+    
     @State private var tabBarSelection: TabBarSelection = .Dashboard
     
     @State private var dateFilter: DateFilter = .Last7Days
@@ -39,7 +41,7 @@ struct TabBarView: View {
                     Image(systemName: "square.grid.2x2.fill").imageScale(.large)
                     Text("Logs")
             }.tag(TabBarSelection.Apps)
-            MoreView()
+            MoreView(update: update)
                 .tabItem {
                     Image(systemName: "ellipsis").imageScale(.large)
                     Text("More")
@@ -50,6 +52,6 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView()
+        EmptyView()
     }
 }

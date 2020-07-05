@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if appUser.loggedIn == true {
-                TabBarView()
+                TabBarView(update: updateAppUser)
             } else {
                 IntroductionView(update: updateAppUser)
             }
