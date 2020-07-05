@@ -12,6 +12,8 @@ struct SignUpSheetView: View {
     
     let update: () -> Void
     
+    @ObservedObject private var keyboard = KeyboardResponder()
+    
     @State private var displayName = ""
     @State private var token = ""
     
@@ -62,7 +64,9 @@ struct SignUpSheetView: View {
             }
         }.alert(isPresented: $showErrorAlert) {
             Alert(title: Text("Error"), message: Text(error), dismissButton: .default(Text("OK")))
-        }
+        }.padding(.bottom, keyboard.currentHeight)
+        .edgesIgnoringSafeArea(.bottom)
+        .animation(.easeOut(duration: 0.16))
     }
     
     func generateToken() {

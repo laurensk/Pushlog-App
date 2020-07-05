@@ -12,6 +12,8 @@ struct LoginSheetView: View {
     
     let update: () -> Void
     
+    @ObservedObject private var keyboard = KeyboardResponder()
+    
     @State private var token = ""
     
     @State private var showErrorAlert = false
@@ -60,7 +62,9 @@ struct LoginSheetView: View {
             }
         }.alert(isPresented: $showErrorAlert) {
             Alert(title: Text("Error"), message: Text(error), dismissButton: .default(Text("OK")))
-        }
+        }.padding(.bottom, keyboard.currentHeight)
+        .edgesIgnoringSafeArea(.bottom)
+        .animation(.easeOut(duration: 0.16))
     }
     
     func login() {

@@ -12,6 +12,8 @@ struct CustomApiSheetView: View {
     
     let update: () -> Void
     
+    @ObservedObject private var keyboard = KeyboardResponder()
+    
     @Environment(\.presentationMode) var presentationMode
     
     @State private var newApiUrl = ""
@@ -70,7 +72,9 @@ struct CustomApiSheetView: View {
             }
         }.alert(isPresented: $showErrorAlert) {
             Alert(title: Text("Error"), message: Text("The URL you've entered is invalid! Please try again."), dismissButton: .default(Text("OK")))
-        }
+        }.padding(.bottom, keyboard.currentHeight)
+        .edgesIgnoringSafeArea(.bottom)
+        .animation(.easeOut(duration: 0.16))
     }
     
     func setApiEndpoint() {
