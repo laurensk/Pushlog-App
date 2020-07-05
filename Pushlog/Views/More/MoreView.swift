@@ -11,6 +11,7 @@ import SwiftUI
 struct MoreView: View {
     
     @State private var user = UserPersistence.getUser()
+
     var body: some View {
         NavigationView {
             VStack {
@@ -91,24 +92,12 @@ struct MoreView: View {
                                 Spacer()
                             }.padding(.horizontal).padding(.bottom, 5)
                             HStack {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .frame(height: 60).shadow(radius: 2)
-                                    .foregroundColor(Color("cardColor"))
-                                    .overlay(Text("Node.JS"))
-                                RoundedRectangle(cornerRadius: 5)
-                                    .frame(height: 60).shadow(radius: 2)
-                                    .foregroundColor(Color("cardColor"))
-                                    .overlay(Text("Java"))
+                                MoreTutorialView(text: "Node.JS", action: {})
+                                MoreTutorialView(text: "Java", action: {})
                             }
                             HStack {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .frame(height: 60).shadow(radius: 2)
-                                    .foregroundColor(Color("cardColor"))
-                                    .overlay(Text("PHP"))
-                                RoundedRectangle(cornerRadius: 5)
-                                    .frame(height: 60).shadow(radius: 2)
-                                    .foregroundColor(Color("cardColor"))
-                                    .overlay(Text("Python"))
+                                MoreTutorialView(text: "PHP", action: {})
+                                MoreTutorialView(text: "Python", action: {})
                             }
                         }
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
@@ -172,8 +161,7 @@ struct MoreView: View {
                             }.padding(.horizontal)
                         }
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
-                }
-                
+                }.buttonStyle(BorderlessButtonStyle())
             }.navigationBarTitle("Pushlog")
                 .onAppear {
                     self.setupUI()
