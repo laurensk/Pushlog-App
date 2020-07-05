@@ -11,7 +11,9 @@ import SwiftUI
 struct MoreView: View {
     
     @State private var user = UserPersistence.getUser()
-
+    
+    let safariView = SafariView()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -92,12 +94,20 @@ struct MoreView: View {
                                 Spacer()
                             }.padding(.horizontal).padding(.bottom, 5)
                             HStack {
-                                MoreTutorialView(text: "Node.JS", action: {})
-                                MoreTutorialView(text: "Java", action: {})
+                                MoreTutorialView(text: "Node.JS", action: {
+                                    self.safariView.openURL(url: URL(string: "https://www.github.com/pushlogapp")!)
+                                })
+                                MoreTutorialView(text: "Java", action: {
+                                    self.safariView.openURL(url: URL(string: "https://www.github.com/pushlogapp")!)
+                                })
                             }
                             HStack {
-                                MoreTutorialView(text: "PHP", action: {})
-                                MoreTutorialView(text: "Python", action: {})
+                                MoreTutorialView(text: "PHP", action: {
+                                    self.safariView.openURL(url: URL(string: "https://www.github.com/pushlogapp")!)
+                                })
+                                MoreTutorialView(text: "Python", action: {
+                                    self.safariView.openURL(url: URL(string: "https://www.github.com/pushlogapp")!)
+                                })
                             }
                         }
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
