@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LogListView: View {
     
-    let logName: String
+    let log: Log
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -19,7 +19,7 @@ struct LogListView: View {
                 .foregroundColor(Color("cardColor"))
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    Text("\(logName)").fontWeight(.semibold).lineLimit(1)
+                    Text("\(log.displayName)").fontWeight(.semibold).lineLimit(1)
                     Spacer()
                     Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
                 }
@@ -30,6 +30,6 @@ struct LogListView: View {
 
 struct LogListView_Previews: PreviewProvider {
     static var previews: some View {
-        LogListView(logName: "Node.JS Backend Test")
+        EmptyView()
     }
 }

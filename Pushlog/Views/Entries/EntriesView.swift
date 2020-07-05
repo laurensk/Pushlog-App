@@ -13,6 +13,8 @@ struct EntriesView: View {
     @Binding var dateFilter: DateFilter
     @Binding var entryFilter: EntryFilter
     
+    @State private var isLoading = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -38,6 +40,11 @@ struct EntriesView: View {
                     }
                 }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())
+                    .pullToRefresh(isShowing: $isLoading) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            self.isLoading = false
+                        }
+                }
             }.navigationBarTitle("Entries")
                 .onAppear {
                     self.setupUI()

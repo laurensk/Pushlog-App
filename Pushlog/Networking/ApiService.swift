@@ -32,4 +32,25 @@ public class ApiService {
         ApiRequest.getRequest(apiUrl: apiUrl, path: "/user/\(token)", type: User.self, completion: completion)
     }
     
+    func getUser(token: String, completion: @escaping (Any?, PushlogError?, Error?) -> Void) {
+        ApiRequest.getRequest(apiUrl: apiUrl, path: "/user/\(token)", type: User.self, completion: completion)
+    }
+    
+    // MARK: - Dashboard
+    
+    // MARK: - Entries
+    
+    // MARK: - Logs
+    
+    func getLogs(completion: @escaping (Any?, PushlogError?, Error?) -> Void) {
+        let userDetails = UserPersistence.getUser()
+        getUser(token: userDetails.userToken, completion: { user, localError, apiError in
+            if let user = user as? User {
+                completion(user.logs, localError, apiError)
+            } else {
+                completion(nil, localError, apiError)
+            }
+        })
+    }
+    
 }

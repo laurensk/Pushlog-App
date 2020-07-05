@@ -7,20 +7,41 @@
 //
 
 import SwiftUI
+import SwiftUIRefresh
 
 struct LogsView: View {
+    
+    @State private var isLoading = false
+    
+    @State private var logs: [Log] = []
+    
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(1...10, id: \.self) {_ in
-                        LogListView(logName: "Node.JS Backend Test")
+                    if logs.isEmpty {
+                        HStack {
+                            Spacer()
+                            Text("No Logs..").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray2))
+                            Spacer()
+                        }.padding(.top, 50)
+                    } else {
+                        ForEach(logs, id: \.logToken) { log in
+                            LogListView(log: log)
+                        }
                     }
                 }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())
+                    .pullToRefresh(isShowing: $isLoading) {
+                        self.getLogs()
+                }
             }.navigationBarTitle("Logs")
                 .onAppear {
                     self.setupUI()
+            }.onAppear {
+                DispatchQueue.main.async {
+                    self.getLogs()
+                }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
@@ -30,6 +51,22 @@ struct LogsView: View {
         UITableView.appearance().separatorStyle = .none
         UITableView.appearance().allowsSelection = false
         UITableViewCell.appearance().selectionStyle = .none
+    }
+    
+    func getLogs() {
+        let service = ApiService()
+        service.getLogs(completion: { logs, localError, apiError in
+            if let logs = logs as? [Log] {
+                self.isLoading = false
+                self.logs = logs
+            } else if apiError != nil {
+                self.isLoading = false
+                ErrorHandling.errorHandling.throwCustomError(error: apiError!.error, showError: true)
+            } else {
+                self.isLoading = false
+                ErrorHandling.errorHandling.throwError(error: localError!, showError: true)
+            }
+        })
     }
     
 }

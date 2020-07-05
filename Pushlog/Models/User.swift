@@ -11,5 +11,5 @@ import Foundation
 struct User: Codable {
     let userToken: String
     let displayName: String
-    let logs: [Entry]
+    let logs: [Log]
 }
