@@ -13,16 +13,23 @@ struct LogsView: View {
     
     @State private var isLoading = false
     
+    @State private var emptyResponse = false
     @State private var logs: [Log] = []
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    if logs.isEmpty {
+                    if logs.isEmpty && emptyResponse {
                         HStack {
                             Spacer()
                             Text("No Logs..").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray2))
+                            Spacer()
+                        }.padding(.top, 50)
+                    } else if logs.isEmpty && !emptyResponse {
+                        HStack {
+                            Spacer()
+                            ActivityIndicator(style: .medium)
                             Spacer()
                         }.padding(.top, 50)
                     } else {
@@ -59,6 +66,7 @@ struct LogsView: View {
             if let logs = logs as? [Log] {
                 self.isLoading = false
                 self.logs = logs
+                if logs.isEmpty { self.emptyResponse = true } else { self.emptyResponse = false }
             } else if apiError != nil {
                 self.isLoading = false
                 ErrorHandling.errorHandling.throwCustomError(error: apiError!.error, showError: true)
