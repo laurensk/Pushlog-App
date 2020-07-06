@@ -8,6 +8,7 @@
 
 import SwiftUI
 import SwiftUIRefresh
+import SwiftUICustomNavigationLink
 
 struct LogsView: View {
     
@@ -34,7 +35,9 @@ struct LogsView: View {
                         }.padding(.top, 50)
                     } else {
                         ForEach(logs, id: \.logToken) { log in
-                            LogListView(log: log)
+                            CustomNavigationLink(destination: AnyView(Text("hello darkness"))) {
+                                AnyView(LogListView(log: log))
+                            }
                         }
                     }
                 }.listRowInsets(EdgeInsets())
