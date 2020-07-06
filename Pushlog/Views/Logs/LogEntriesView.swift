@@ -27,7 +27,9 @@ struct LogEntriesView: View {
         VStack {
             List {
                 VStack {
-                    Picker(selection: $dateFilter, label: EmptyView()) {
+                    Picker(selection: $dateFilter.onChange({ _ in
+                        self.getEntries()
+                    }), label: EmptyView()) {
                         Text("Today").tag(DateFilter.Today)
                         Text("Last 7 Days").tag(DateFilter.Last7Days)
                         Text("This Month").tag(DateFilter.ThisMonth)
@@ -48,7 +50,7 @@ struct LogEntriesView: View {
                 if entries.isEmpty && emptyResponse {
                     HStack {
                         Spacer()
-                        Text("No Logs..").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray2))
+                        Text("No Entries...").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray2))
                         Spacer()
                     }.padding(.top, 50)
                 } else if entries.isEmpty && !emptyResponse {
@@ -60,7 +62,7 @@ struct LogEntriesView: View {
                 } else {
                     ForEach(entries, id: \.self) { log in
                         CustomNavigationLink(destination: AnyView(Text("dest"))) {
-                            AnyView(LogAppView(logName: "Node.JS Backend Test", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend"))
+                            AnyView(LogTitleView(type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend"))
                         }
                     }
                 }

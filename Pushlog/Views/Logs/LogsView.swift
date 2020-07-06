@@ -29,7 +29,7 @@ struct LogsView: View {
                     if logs.isEmpty && emptyResponse {
                         HStack {
                             Spacer()
-                            Text("No Logs..").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray2))
+                            Text("No Logs...").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray2))
                             Spacer()
                         }.padding(.top, 50)
                     } else if logs.isEmpty && !emptyResponse {
