@@ -72,7 +72,7 @@ struct LogEntriesView: View {
                     }.padding(.top, 50)
                 } else {
                     ForEach(filteredEntries, id: \.self) { entry in
-                        CustomNavigationLink(destination: AnyView(EntryDetailView(entry: entry))) {
+                        CustomNavigationLink(destination: AnyView(EntryDetailView(entry: entry, log: self.log))) {
                             AnyView(EntryTitleView(entry: entry))
                         }
                     }

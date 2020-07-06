@@ -11,14 +11,24 @@ import SwiftUI
 struct EntryDetailView: View {
     
     let entry: Entry
+    let log: Log
     
     var body: some View {
-        Text("hello, \(entry.level)")
+        VStack {
+            ScrollView {
+                Text("\(log.displayName)")
+                HStack {
+                    Text("\(entry.level)")
+                    Text("\(DateUtils.getDateTimeString(DateUtils.timestampToDate(entry.timestamp)))")
+                }
+                Text("\(entry.value)")
+            }
+        }.navigationBarTitle("Entry", displayMode: .inline)
     }
 }
 
 struct EntryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView()
+        EntryDetailView(entry: Entry(timestamp: 12121212, value: "Hello darkness my old friend, i've come to talk with your again...", level: "Error"), log: Log(logToken: "lol", displayName: "Node JS Backend"))
     }
 }
