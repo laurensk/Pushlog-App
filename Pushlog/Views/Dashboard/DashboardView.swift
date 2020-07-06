@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUICustomNavigationLink
 
 struct DashboardView: View {
     
@@ -49,12 +50,8 @@ struct DashboardView: View {
                         })
                     }.padding(.bottom, 7)
                     ForEach(1...10, id: \.self) {_ in
-                        
-                        ZStack {
-                            LogAppView(logName: "Node.js Playzlib Backend", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
-                            NavigationLink(destination: LogDetailView()) {
-                                EmptyView()
-                            }.frame(width: 0).hidden()
+                        CustomNavigationLink(destination: AnyView(Text("hello darkness"))) {
+                            AnyView(LogAppView(logName: "Node.js Playzlib Backend", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend"))
                         }
                     }
                 }.listRowInsets(EdgeInsets())
