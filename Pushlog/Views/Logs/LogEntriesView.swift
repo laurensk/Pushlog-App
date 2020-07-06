@@ -60,9 +60,9 @@ struct LogEntriesView: View {
                         Spacer()
                     }.padding(.top, 50)
                 } else {
-                    ForEach(entries, id: \.self) { log in
+                    ForEach(entries, id: \.self) { entry in
                         CustomNavigationLink(destination: AnyView(Text("dest"))) {
-                            AnyView(LogTitleView(type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend"))
+                            AnyView(LogTitleView(entry: entry))
                         }
                     }
                 }

@@ -41,7 +41,7 @@ public class DateUtils {
     }
     
     public static func timestampToDate(_ timestamp: UInt64) -> Date {
-        return Date(timeIntervalSinceReferenceDate: Double(timestamp) / 1000)
+        return Date(timeIntervalSince1970: Double(timestamp) / 1000)
     }
     
     public static func timeRangeForDateFilter(_ dateFilter: DateFilter) -> (UInt64, UInt64) {

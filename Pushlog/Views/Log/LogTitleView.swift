@@ -10,10 +10,21 @@ import SwiftUI
 
 struct LogTitleView: View {
     
-    let type: String
-    let color: Color
-    let date: Date
-    let desc: String
+    let entry: Entry
+    
+    var color: Color
+    
+    init(entry: Entry) {
+        self.entry = entry
+        
+        if entry.level.lowercased() == "error" {
+            self.color = Color(UIColor.systemRed)
+        } else if entry.level.lowercased() == "info" {
+            self.color = Color(UIColor.systemYellow)
+        } else {
+            self.color = Color(UIColor.systemGray)
+        }
+    }
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -22,11 +33,11 @@ struct LogTitleView: View {
                 .foregroundColor(Color("cardColor"))
             VStack(alignment: .leading) {
                 HStack {
-                    RoundedRectangle(cornerRadius: 4).frame(width: 80, height: 25).foregroundColor(color).overlay(Text("\(type)").foregroundColor(Color.white).fontWeight(.bold))
-                    Text("\(DateUtils.getDateTimeString(date))").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray))
+                    RoundedRectangle(cornerRadius: 4).frame(width: 80, height: 25).foregroundColor(color).overlay(Text("\(entry.level)").foregroundColor(Color.white).fontWeight(.bold))
+                    Text("\(DateUtils.getDateTimeString(DateUtils.timestampToDate(entry.timestamp)))").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray))
                 }
                 HStack(alignment: .top) {
-                    Text("\(desc)").lineLimit(2)
+                    Text("\(entry.value)").lineLimit(2)
                     Spacer()
                     Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
                 }
@@ -37,6 +48,6 @@ struct LogTitleView: View {
 
 struct LogTitleView_Previews: PreviewProvider {
     static var previews: some View {
-        LogTitleView(type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
+        EmptyView()
     }
 }
