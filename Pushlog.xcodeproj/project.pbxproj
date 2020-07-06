@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D2E8EA124B34A5900E3E536 /* SwiftUICustomNavigationLink in Frameworks */ = {isa = PBXBuildFile; productRef = 0D2E8EA024B34A5900E3E536 /* SwiftUICustomNavigationLink */; };
 		0D2E8EA424B38B0F00E3E536 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E8EA324B38B0F00E3E536 /* Binding+Extensions.swift */; };
+		0D2E8EA624B3955600E3E536 /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E8EA524B3955600E3E536 /* EntryDetailView.swift */; };
 		0D403CE424AE1DFA007A1C8A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CE324AE1DFA007A1C8A /* DateUtils.swift */; };
 		0D403CE824AE2867007A1C8A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CE724AE2867007A1C8A /* Enums.swift */; };
 		0D403CEC24AE6D85007A1C8A /* LogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403CEB24AE6D85007A1C8A /* LogListView.swift */; };
@@ -50,8 +51,8 @@
 		0DD87F4424ADA0C900DBE3CD /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4324ADA0C900DBE3CD /* LogsView.swift */; };
 		0DD87F4624ADA0D100DBE3CD /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4524ADA0D100DBE3CD /* MoreView.swift */; };
 		0DD87F4824ADA59600DBE3CD /* DashboardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4724ADA59600DBE3CD /* DashboardCardView.swift */; };
-		0DD87F4A24ADFBDF00DBE3CD /* LogAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */; };
-		0DD87F4C24ADFC0300DBE3CD /* LogTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */; };
+		0DD87F4A24ADFBDF00DBE3CD /* EntryAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4924ADFBDF00DBE3CD /* EntryAppView.swift */; };
+		0DD87F4C24ADFC0300DBE3CD /* EntryTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4B24ADFC0300DBE3CD /* EntryTitleView.swift */; };
 		0DD87F4E24ADFC2600DBE3CD /* LogEntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4D24ADFC2600DBE3CD /* LogEntriesView.swift */; };
 		0DD9635D24B0AE29007D5D8C /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9635C24B0AE29007D5D8C /* ErrorHandling.swift */; };
 		0DD9635F24B0B7EA007D5D8C /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9635E24B0B7EA007D5D8C /* ApiRequest.swift */; };
@@ -80,6 +81,7 @@
 /* Begin PBXFileReference section */
 		0D2E8E9E24B34A4C00E3E536 /* SwiftUICustomNavigationLink */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftUICustomNavigationLink; path = ../SwiftUICustomNavigationLink; sourceTree = "<group>"; };
 		0D2E8EA324B38B0F00E3E536 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
+		0D2E8EA524B3955600E3E536 /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
 		0D403CE324AE1DFA007A1C8A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		0D403CE724AE2867007A1C8A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		0D403CEB24AE6D85007A1C8A /* LogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListView.swift; sourceTree = "<group>"; };
@@ -127,8 +129,8 @@
 		0DD87F4324ADA0C900DBE3CD /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		0DD87F4524ADA0D100DBE3CD /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		0DD87F4724ADA59600DBE3CD /* DashboardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCardView.swift; sourceTree = "<group>"; };
-		0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAppView.swift; sourceTree = "<group>"; };
-		0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleView.swift; sourceTree = "<group>"; };
+		0DD87F4924ADFBDF00DBE3CD /* EntryAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAppView.swift; sourceTree = "<group>"; };
+		0DD87F4B24ADFC0300DBE3CD /* EntryTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTitleView.swift; sourceTree = "<group>"; };
 		0DD87F4D24ADFC2600DBE3CD /* LogEntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntriesView.swift; sourceTree = "<group>"; };
 		0DD9635C24B0AE29007D5D8C /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		0DD9635E24B0B7EA007D5D8C /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
@@ -298,7 +300,7 @@
 			children = (
 				0D80D3C724AFC154003BCDCD /* Introduction */,
 				0D403CFF24AF2D7F007A1C8A /* Login */,
-				0DD87F4F24ADFC6A00DBE3CD /* Log */,
+				0DD87F4F24ADFC6A00DBE3CD /* Entry */,
 				0DD87F3A24ADA05200DBE3CD /* Dashboard */,
 				0DD87F3924ADA04D00DBE3CD /* Entries */,
 				0DD87F3824ADA04700DBE3CD /* Logs */,
@@ -376,13 +378,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		0DD87F4F24ADFC6A00DBE3CD /* Log */ = {
+		0DD87F4F24ADFC6A00DBE3CD /* Entry */ = {
 			isa = PBXGroup;
 			children = (
-				0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */,
-				0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */,
+				0DD87F4924ADFBDF00DBE3CD /* EntryAppView.swift */,
+				0DD87F4B24ADFC0300DBE3CD /* EntryTitleView.swift */,
+				0D2E8EA524B3955600E3E536 /* EntryDetailView.swift */,
 			);
-			path = Log;
+			path = Entry;
 			sourceTree = "<group>";
 		};
 		0DDA6E7124B0E6C20009E427 /* HelperViews */ = {
@@ -539,6 +542,7 @@
 				0DD9635D24B0AE29007D5D8C /* ErrorHandling.swift in Sources */,
 				0DD87F4E24ADFC2600DBE3CD /* LogEntriesView.swift in Sources */,
 				0D80D3D124AFC27B003BCDCD /* IntroBtnRowView.swift in Sources */,
+				0D2E8EA624B3955600E3E536 /* EntryDetailView.swift in Sources */,
 				0DD87F0624ADA02A00DBE3CD /* AppDelegate.swift in Sources */,
 				0D80D3CB24AFC1E7003BCDCD /* IntroFeatureViews.swift in Sources */,
 				0DD87F0824ADA02A00DBE3CD /* SceneDelegate.swift in Sources */,
@@ -557,10 +561,10 @@
 				0D2E8EA424B38B0F00E3E536 /* Binding+Extensions.swift in Sources */,
 				0D403D0524AF2DDD007A1C8A /* AppUser.swift in Sources */,
 				0DD87F4024ADA0AC00DBE3CD /* DashboardView.swift in Sources */,
-				0DD87F4A24ADFBDF00DBE3CD /* LogAppView.swift in Sources */,
+				0DD87F4A24ADFBDF00DBE3CD /* EntryAppView.swift in Sources */,
 				0DD87F4424ADA0C900DBE3CD /* LogsView.swift in Sources */,
 				0D403CE824AE2867007A1C8A /* Enums.swift in Sources */,
-				0DD87F4C24ADFC0300DBE3CD /* LogTitleView.swift in Sources */,
+				0DD87F4C24ADFC0300DBE3CD /* EntryTitleView.swift in Sources */,
 				0DD9636124B0CE9F007D5D8C /* SignUpSheetView.swift in Sources */,
 				0D80D3C624AFB088003BCDCD /* IntroExtensions.swift in Sources */,
 				0DD87F3E24ADA08900DBE3CD /* TabBarView.swift in Sources */,

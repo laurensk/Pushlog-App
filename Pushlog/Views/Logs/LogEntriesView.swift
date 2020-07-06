@@ -21,6 +21,17 @@ struct LogEntriesView: View {
     @State private var entries: [Entry] = []
     @State private var emptyResponse = false
     
+    var filteredEntries: [Entry] {
+        switch entryFilter {
+        case .All:
+            return entries
+        case .Info:
+            return entries.filter { $0.level.lowercased() == "info" }
+        case .Errors:
+            return entries.filter { $0.level.lowercased() == "error" }
+        }
+    }
+    
     let service = ApiService()
     
     var body: some View {
@@ -60,9 +71,9 @@ struct LogEntriesView: View {
                         Spacer()
                     }.padding(.top, 50)
                 } else {
-                    ForEach(entries, id: \.self) { entry in
-                        CustomNavigationLink(destination: AnyView(Text("dest"))) {
-                            AnyView(LogTitleView(entry: entry))
+                    ForEach(filteredEntries, id: \.self) { entry in
+                        CustomNavigationLink(destination: AnyView(EntryDetailView(entry: entry))) {
+                            AnyView(EntryTitleView(entry: entry))
                         }
                     }
                 }

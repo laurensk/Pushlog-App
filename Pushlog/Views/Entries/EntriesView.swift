@@ -36,7 +36,7 @@ struct EntriesView: View {
                             .padding(.top, 5).padding(.bottom, 10)
                     }
                     ForEach(1...10, id: \.self) {_ in
-                        LogAppView(logName: "Node.JS Backend Test", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
+                        EntryAppView(logName: "Node.JS Backend Test", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
                     }
                 }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())

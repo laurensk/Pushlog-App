@@ -50,17 +50,6 @@ struct MoreView: View {
                                 Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
                             }.padding(.horizontal).padding(.bottom)
                             HStack {
-                                Image(systemName: "lock.shield")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25)
-                                Text("Add to password manager")
-                                    .fontWeight(.semibold)
-                                    .padding(.leading, 5)
-                                Spacer()
-                                Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
-                            }.padding(.horizontal).padding(.bottom)
-                            HStack {
                                 Image(systemName: "trash.circle")
                                     .resizable()
                                     .scaledToFit()

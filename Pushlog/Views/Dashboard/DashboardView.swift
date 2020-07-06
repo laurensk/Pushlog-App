@@ -51,7 +51,7 @@ struct DashboardView: View {
                     }.padding(.bottom, 7)
                     ForEach(1...10, id: \.self) {_ in
                         CustomNavigationLink(destination: AnyView(Text("hello darkness"))) {
-                            AnyView(LogAppView(logName: "Node.js Playzlib Backend", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend"))
+                            AnyView(EntryAppView(logName: "Node.js Playzlib Backend", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend"))
                         }
                     }
                 }.listRowInsets(EdgeInsets())

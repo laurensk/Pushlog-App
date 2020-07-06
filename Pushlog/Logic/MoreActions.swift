@@ -17,14 +17,6 @@ public class MoreActions {
         print(appUser.userToken)
     }
     
-    static func addToPasswordManager() {
-        let appUser = UserPersistence.getUser()
-        let username = appUser.userDisplayName
-        let password = appUser.userToken
-        let url = "onepassword://"
-        UIApplication.shared.open(URL(string: url)!)
-    }
-    
     static func deleteAccountAndData() {
         print("not available...")
     }

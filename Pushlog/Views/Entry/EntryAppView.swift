@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct LogAppView: View {
+struct EntryAppView: View {
     
     let logName: String
     let type: String
@@ -35,8 +35,8 @@ struct LogAppView: View {
     }
 }
 
-struct LogAppView_Previews: PreviewProvider {
+struct EntryAppView_Previews: PreviewProvider {
     static var previews: some View {
-        LogAppView(logName: "Node.js Playzlib Backend", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
+        EntryAppView(logName: "Node.js Playzlib Backend", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
     }
 }

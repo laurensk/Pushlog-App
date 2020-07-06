@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct LogTitleView: View {
+struct EntryTitleView: View {
     
     let entry: Entry
     
@@ -46,7 +46,7 @@ struct LogTitleView: View {
     }
 }
 
-struct LogTitleView_Previews: PreviewProvider {
+struct EntryTitleView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyView()
     }
