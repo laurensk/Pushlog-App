@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Entry: Codable {
-    let timestamp: Double
+struct Entry: Codable, Hashable {
+    let timestamp: UInt64
     let value: String
     let level: String
 }

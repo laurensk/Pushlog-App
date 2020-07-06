@@ -22,7 +22,7 @@ public class ApiRequest {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode(type.self, from: data) {
-                    completion(decodedResponse as? User, nil, nil)
+                    completion(decodedResponse, nil, nil)
                 } else if let error = try? JSONDecoder().decode(Error.self, from: data) {
                     completion(nil, nil, error)
                 } else {
@@ -44,7 +44,7 @@ public class ApiRequest {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 if let decodedResponse = try? JSONDecoder().decode(type.self, from: data) {
-                    completion(decodedResponse as? User, nil, nil)
+                    completion(decodedResponse, nil, nil)
                     return
                 } else if let error = try? JSONDecoder().decode(Error.self, from: data) {
                     completion(nil, nil, error)

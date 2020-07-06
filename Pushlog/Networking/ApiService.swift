@@ -40,6 +40,10 @@ public class ApiService {
     
     // MARK: - Entries
     
+    func getLogEntries(logToken: String, startTime: UInt64, endTime: UInt64, completion: @escaping (Any?, PushlogError?, Error?) -> Void) {
+        ApiRequest.getRequest(apiUrl: apiUrl, path: "/log/\(logToken)/from/\(startTime)/until/\(endTime)", type: [Entry].self, completion: completion)
+    }
+    
     // MARK: - Logs
     
     func getLogs(completion: @escaping (Any?, PushlogError?, Error?) -> Void) {

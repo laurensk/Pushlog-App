@@ -12,10 +12,15 @@ import SwiftUICustomNavigationLink
 
 struct LogsView: View {
     
+    @Binding var dateFilter: DateFilter
+    @Binding var entryFilter: EntryFilter
+    
     @State private var isLoading = false
     
     @State private var emptyResponse = false
     @State private var logs: [Log] = []
+    
+    let service = ApiService()
     
     var body: some View {
         NavigationView {
@@ -35,7 +40,7 @@ struct LogsView: View {
                         }.padding(.top, 50)
                     } else {
                         ForEach(logs, id: \.logToken) { log in
-                            CustomNavigationLink(destination: AnyView(Text("hello darkness"))) {
+                            CustomNavigationLink(destination: AnyView(LogEntriesView(log: log, dateFilter: self.$dateFilter, entryFilter: self.$entryFilter))) {
                                 AnyView(LogListView(log: log))
                             }
                         }
@@ -64,7 +69,6 @@ struct LogsView: View {
     }
     
     func getLogs() {
-        let service = ApiService()
         service.getLogs(completion: { logs, localError, apiError in
             if let logs = logs as? [Log] {
                 self.isLoading = false
@@ -84,6 +88,6 @@ struct LogsView: View {
 
 struct LogsView_Previews: PreviewProvider {
     static var previews: some View {
-        LogsView()
+        EmptyView()
     }
 }

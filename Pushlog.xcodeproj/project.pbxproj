@@ -51,7 +51,7 @@
 		0DD87F4824ADA59600DBE3CD /* DashboardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4724ADA59600DBE3CD /* DashboardCardView.swift */; };
 		0DD87F4A24ADFBDF00DBE3CD /* LogAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */; };
 		0DD87F4C24ADFC0300DBE3CD /* LogTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */; };
-		0DD87F4E24ADFC2600DBE3CD /* LogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4D24ADFC2600DBE3CD /* LogDetailView.swift */; };
+		0DD87F4E24ADFC2600DBE3CD /* LogEntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD87F4D24ADFC2600DBE3CD /* LogEntriesView.swift */; };
 		0DD9635D24B0AE29007D5D8C /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9635C24B0AE29007D5D8C /* ErrorHandling.swift */; };
 		0DD9635F24B0B7EA007D5D8C /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9635E24B0B7EA007D5D8C /* ApiRequest.swift */; };
 		0DD9636124B0CE9F007D5D8C /* SignUpSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD9636024B0CE9F007D5D8C /* SignUpSheetView.swift */; };
@@ -127,7 +127,7 @@
 		0DD87F4724ADA59600DBE3CD /* DashboardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCardView.swift; sourceTree = "<group>"; };
 		0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAppView.swift; sourceTree = "<group>"; };
 		0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTitleView.swift; sourceTree = "<group>"; };
-		0DD87F4D24ADFC2600DBE3CD /* LogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetailView.swift; sourceTree = "<group>"; };
+		0DD87F4D24ADFC2600DBE3CD /* LogEntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntriesView.swift; sourceTree = "<group>"; };
 		0DD9635C24B0AE29007D5D8C /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		0DD9635E24B0B7EA007D5D8C /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		0DD9636024B0CE9F007D5D8C /* SignUpSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSheetView.swift; sourceTree = "<group>"; };
@@ -369,7 +369,7 @@
 			children = (
 				0DD87F4924ADFBDF00DBE3CD /* LogAppView.swift */,
 				0DD87F4B24ADFC0300DBE3CD /* LogTitleView.swift */,
-				0DD87F4D24ADFC2600DBE3CD /* LogDetailView.swift */,
+				0DD87F4D24ADFC2600DBE3CD /* LogEntriesView.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -526,7 +526,7 @@
 				0D403CFE24AF2C2D007A1C8A /* UserPersistence.swift in Sources */,
 				0D403CFA24AF1BC3007A1C8A /* Entry.swift in Sources */,
 				0DD9635D24B0AE29007D5D8C /* ErrorHandling.swift in Sources */,
-				0DD87F4E24ADFC2600DBE3CD /* LogDetailView.swift in Sources */,
+				0DD87F4E24ADFC2600DBE3CD /* LogEntriesView.swift in Sources */,
 				0D80D3D124AFC27B003BCDCD /* IntroBtnRowView.swift in Sources */,
 				0DD87F0624ADA02A00DBE3CD /* AppDelegate.swift in Sources */,
 				0D80D3CB24AFC1E7003BCDCD /* IntroFeatureViews.swift in Sources */,

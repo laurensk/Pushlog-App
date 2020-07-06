@@ -36,12 +36,35 @@ public class DateUtils {
         return "\(getDateString(date)) \(getTimeString(date))"
     }
     
-    public static func dateToTimestamp(_ date: Date) -> TimeInterval {
-        return date.timeIntervalSince1970
+    public static func dateToTimestamp(_ date: Date) -> UInt64 {
+        return UInt64(date.timeIntervalSince1970 * 1000)
     }
     
-    public static func timestampToDate(_ timestamp: TimeInterval) -> Date {
-        return Date(timeIntervalSinceReferenceDate: timestamp)
+    public static func timestampToDate(_ timestamp: UInt64) -> Date {
+        return Date(timeIntervalSinceReferenceDate: Double(timestamp) / 1000)
+    }
+    
+    public static func timeRangeForDateFilter(_ dateFilter: DateFilter) -> (UInt64, UInt64) {
+        
+        var startDate = Date()
+        let endDate = Date()
+        
+        switch dateFilter {
+        case .Today:
+            startDate = Calendar.current.date(byAdding: .hour, value: -24, to: endDate)!
+            break
+        case .Last7Days:
+            startDate = Calendar.current.date(byAdding: .day, value: -7, to: endDate)!
+            break
+        case .ThisMonth:
+            startDate = Calendar.current.date(byAdding: .month, value: -1, to: endDate)!
+            break
+        case .ThisYear:
+            startDate = Calendar.current.date(byAdding: .year, value: -1, to: endDate)!
+            break
+        }
+        
+        return (dateToTimestamp(startDate), dateToTimestamp(endDate))
     }
     
 }

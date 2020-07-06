@@ -36,7 +36,7 @@ struct TabBarView: View {
                     Image(systemName: "list.dash").imageScale(.large)
                     Text("Entries")
             }.tag(TabBarSelection.Logs)
-            LogsView()
+            LogsView(dateFilter: $dateFilter, entryFilter: $entryFilter)
                 .tabItem {
                     Image(systemName: "square.grid.2x2.fill").imageScale(.large)
                     Text("Logs")

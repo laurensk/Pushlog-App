@@ -26,8 +26,8 @@ struct DashboardView: View {
                         Picker(selection: $dateFilter, label: EmptyView()) {
                             Text("Today").tag(DateFilter.Today)
                             Text("Last 7 Days").tag(DateFilter.Last7Days)
-                            Text("Last Month").tag(DateFilter.LastMonth)
-                            Text("Last Year").tag(DateFilter.LastYear)
+                            Text("This Month").tag(DateFilter.ThisMonth)
+                            Text("This Year").tag(DateFilter.ThisYear)
                         }.pickerStyle(SegmentedPickerStyle())
                     }.padding(.top, 5).padding(.bottom, 7)
                     HStack {

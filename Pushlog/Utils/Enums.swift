@@ -11,8 +11,8 @@ import Foundation
 public enum DateFilter {
     case Today
     case Last7Days
-    case LastMonth
-    case LastYear
+    case ThisMonth
+    case ThisYear
 }
 
 public enum EntryFilter {
