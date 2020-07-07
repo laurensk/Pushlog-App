@@ -12,10 +12,10 @@ import SafariServices
 
 struct SafariView {
     
-    public func openURL(url: URL) {
+    public func openURL(url: String) {
         DispatchQueue.main.async {
             let vc = UIApplication.shared.windows.first!.rootViewController
-            let safariVc = SFSafariViewController(url: url)
+            let safariVc = SFSafariViewController(url: URL(string: url)!)
             vc!.present(safariVc, animated: true, completion: nil)
         }
     }

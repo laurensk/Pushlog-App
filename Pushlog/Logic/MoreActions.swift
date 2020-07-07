@@ -17,8 +17,12 @@ public class MoreActions {
         print(appUser.userToken)
     }
     
-    static func deleteAccountAndData() {
-        print("not available...")
+    static func sendMail() {
+        UIApplication.shared.open(URL(string: "mailto:pushlog@projects.laurensk.at")!)
+    }
+    
+    static func openURL(url: String) {
+        UIApplication.shared.open(URL(string: url)!)
     }
     
     static func logOut(update: () -> Void) {

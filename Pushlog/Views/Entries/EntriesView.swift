@@ -37,7 +37,9 @@ struct EntriesView: View {
             VStack {
                 List {
                     VStack {
-                        Picker(selection: $dateFilter, label: EmptyView()) {
+                        Picker(selection: $dateFilter.onChange({ _ in
+                            self.getAllEntries()
+                        }), label: EmptyView()) {
                             Text("Today").tag(DateFilter.Today)
                             Text("Last 7 Days").tag(DateFilter.Last7Days)
                             Text("This Month").tag(DateFilter.ThisMonth)
@@ -68,7 +70,7 @@ struct EntriesView: View {
                     } else {
                         ForEach(filteredEntries, id: \.self) { globalEntry in
                             CustomNavigationLink(destination: AnyView(EntryDetailView(entry: globalEntry.entry, log: globalEntry.log))) {
-                                AnyView(EntryTitleView(entry: globalEntry.entry))
+                                AnyView(EntryAppView(log: globalEntry.log, entry: globalEntry.entry))
                             }
                         }
                     }
@@ -76,9 +78,7 @@ struct EntriesView: View {
                 }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())
                     .pullToRefresh(isShowing: $isLoading) {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            self.isLoading = false
-                        }
+                        self.getAllEntries()
                 }
             }.navigationBarTitle("Entries")
                 .onAppear {

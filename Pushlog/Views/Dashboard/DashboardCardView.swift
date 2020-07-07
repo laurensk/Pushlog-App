@@ -11,7 +11,7 @@ import SwiftUI
 struct DashboardCardView: View {
     
     let title: String
-    let count: Int
+    let count: String
     let color: UIColor
     let action: () -> Void
     
@@ -40,6 +40,6 @@ struct DashboardCardView: View {
 
 struct DashboardCardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardCardView(title: "Apps", count: 13, color: UIColor.systemRed, action: {})
+        EmptyView()
     }
 }
