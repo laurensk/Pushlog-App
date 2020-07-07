@@ -18,7 +18,7 @@ public class MoreActions {
     }
     
     static func sendMail() {
-        UIApplication.shared.open(URL(string: "mailto:pushlog@projects.laurensk.at")!)
+        UIApplication.shared.open(URL(string: "mailto:pushlog@laurensk.at")!)
     }
     
     static func openURL(url: String) {
