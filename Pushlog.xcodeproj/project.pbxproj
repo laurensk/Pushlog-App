@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1FCF4124B4A02F009BBD75 /* GlobalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FCF4024B4A02F009BBD75 /* GlobalEntry.swift */; };
 		0D2E8EA124B34A5900E3E536 /* SwiftUICustomNavigationLink in Frameworks */ = {isa = PBXBuildFile; productRef = 0D2E8EA024B34A5900E3E536 /* SwiftUICustomNavigationLink */; };
 		0D2E8EA424B38B0F00E3E536 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E8EA324B38B0F00E3E536 /* Binding+Extensions.swift */; };
 		0D2E8EA624B3955600E3E536 /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E8EA524B3955600E3E536 /* EntryDetailView.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1FCF4024B4A02F009BBD75 /* GlobalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEntry.swift; sourceTree = "<group>"; };
 		0D2E8E9E24B34A4C00E3E536 /* SwiftUICustomNavigationLink */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftUICustomNavigationLink; path = ../SwiftUICustomNavigationLink; sourceTree = "<group>"; };
 		0D2E8EA324B38B0F00E3E536 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		0D2E8EA524B3955600E3E536 /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				0D403CFB24AF1C14007A1C8A /* User.swift */,
 				0D403CF724AF1BBB007A1C8A /* Log.swift */,
 				0D403CF924AF1BC3007A1C8A /* Entry.swift */,
+				0D1FCF4024B4A02F009BBD75 /* GlobalEntry.swift */,
 				0D403D0424AF2DDD007A1C8A /* AppUser.swift */,
 				0D9317A824B08DA40001E918 /* CustomApi.swift */,
 				0DD3B84324B1073500014162 /* Error.swift */,
@@ -543,6 +546,7 @@
 				0DD87F4E24ADFC2600DBE3CD /* LogEntriesView.swift in Sources */,
 				0D80D3D124AFC27B003BCDCD /* IntroBtnRowView.swift in Sources */,
 				0D2E8EA624B3955600E3E536 /* EntryDetailView.swift in Sources */,
+				0D1FCF4124B4A02F009BBD75 /* GlobalEntry.swift in Sources */,
 				0DD87F0624ADA02A00DBE3CD /* AppDelegate.swift in Sources */,
 				0D80D3CB24AFC1E7003BCDCD /* IntroFeatureViews.swift in Sources */,
 				0DD87F0824ADA02A00DBE3CD /* SceneDelegate.swift in Sources */,

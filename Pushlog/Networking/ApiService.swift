@@ -44,6 +44,29 @@ public class ApiService {
         ApiRequest.getRequest(apiUrl: apiUrl, path: "/log/\(logToken)/from/\(startTime)/until/\(endTime)", type: [Entry].self, completion: completion)
     }
     
+    func getAllEntries(startTime: UInt64, endTime: UInt64, completion: @escaping (Any?, PushlogError?, Error?) -> Void) {
+        var globalEntries: [GlobalEntry] = []
+        getLogs(completion: { logs, localError, apiError in
+            if let logs = logs as? [Log] {
+                for log in logs {
+                    self.getLogEntries(logToken: log.logToken, startTime: startTime, endTime: endTime, completion: { entries, localError, apiError in
+                        if let entries = entries as? [Entry] {
+                            for entry in entries {
+                                globalEntries.append(GlobalEntry(log: log, entry: entry))
+                            }
+                            globalEntries = globalEntries.sorted(by: { $0.entry.timestamp > $1.entry.timestamp })
+                            completion(globalEntries, localError, apiError)
+                        } else {
+                            completion(nil, localError, apiError)
+                        }
+                    })
+                }
+            } else {
+                completion(nil, localError, apiError)
+            }
+        })
+    }
+    
     // MARK: - Logs
     
     func getLogs(completion: @escaping (Any?, PushlogError?, Error?) -> Void) {

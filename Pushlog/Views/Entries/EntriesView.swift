@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUICustomNavigationLink
 
 struct EntriesView: View {
     
@@ -14,6 +15,22 @@ struct EntriesView: View {
     @Binding var entryFilter: EntryFilter
     
     @State private var isLoading = false
+    
+    @State private var entries: [GlobalEntry] = []
+    @State private var emptyResponse = false
+    
+    var filteredEntries: [GlobalEntry] {
+        switch entryFilter {
+        case .All:
+            return entries
+        case .Info:
+            return entries.filter { $0.entry.level.lowercased() == "info" }
+        case .Errors:
+            return entries.filter { $0.entry.level.lowercased() == "error" }
+        }
+    }
+    
+    let service = ApiService()
     
     var body: some View {
         NavigationView {
@@ -35,9 +52,27 @@ struct EntriesView: View {
                         }.pickerStyle(SegmentedPickerStyle())
                             .padding(.top, 5).padding(.bottom, 10)
                     }
-                    ForEach(1...10, id: \.self) {_ in
-                        EntryAppView(logName: "Node.JS Backend Test", type: "Error", color: Color(UIColor.systemRed), date: Date(), desc: "SSH Host Authentication Failed for this stupid backend")
+                    
+                    if entries.isEmpty && emptyResponse {
+                        HStack {
+                            Spacer()
+                            Text("No Entries...").fontWeight(.semibold).foregroundColor(Color(UIColor.systemGray2))
+                            Spacer()
+                        }.padding(.top, 50)
+                    } else if entries.isEmpty && !emptyResponse {
+                        HStack {
+                            Spacer()
+                            ActivityIndicator(style: .medium)
+                            Spacer()
+                        }.padding(.top, 50)
+                    } else {
+                        ForEach(filteredEntries, id: \.self) { globalEntry in
+                            CustomNavigationLink(destination: AnyView(EntryDetailView(entry: globalEntry.entry, log: globalEntry.log))) {
+                                AnyView(EntryTitleView(entry: globalEntry.entry))
+                            }
+                        }
                     }
+                    
                 }.listRowInsets(EdgeInsets())
                     .buttonStyle(BorderlessButtonStyle())
                     .pullToRefresh(isShowing: $isLoading) {
@@ -48,6 +83,7 @@ struct EntriesView: View {
             }.navigationBarTitle("Entries")
                 .onAppear {
                     self.setupUI()
+                    self.getAllEntries()
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
@@ -57,6 +93,23 @@ struct EntriesView: View {
         UITableView.appearance().separatorStyle = .none
         UITableView.appearance().allowsSelection = false
         UITableViewCell.appearance().selectionStyle = .none
+    }
+    
+    func getAllEntries() {
+        let timeRange = DateUtils.timeRangeForDateFilter(self.dateFilter)
+        service.getAllEntries(startTime: timeRange.0, endTime: timeRange.1, completion: { entries, localError, apiError in
+            if let entries = entries as? [GlobalEntry] {
+                self.isLoading = false
+                self.entries = entries
+                if entries.isEmpty { self.emptyResponse = true } else { self.emptyResponse = false }
+            } else if apiError != nil {
+                self.isLoading = false
+                ErrorHandling.errorHandling.throwCustomError(error: apiError!.error, showError: true)
+            } else {
+                self.isLoading = false
+                ErrorHandling.errorHandling.throwError(error: localError!, showError: true)
+            }
+        })
     }
     
 }

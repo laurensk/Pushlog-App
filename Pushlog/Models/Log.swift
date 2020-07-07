@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Log: Codable {
+struct Log: Codable, Hashable {
     let logToken: String
     let displayName: String
 }
