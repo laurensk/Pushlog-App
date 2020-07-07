@@ -54,7 +54,7 @@ struct MoreUserTokenView: View {
                 }) {
                     Text("Done").fontWeight(.semibold)
                 })
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
