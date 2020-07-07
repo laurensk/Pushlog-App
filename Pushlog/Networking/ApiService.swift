@@ -48,6 +48,7 @@ public class ApiService {
         var globalEntries: [GlobalEntry] = []
         getLogs(completion: { logs, localError, apiError in
             if let logs = logs as? [Log] {
+                if logs.isEmpty { completion(globalEntries, localError, apiError); return }
                 for log in logs {
                     self.getLogEntries(logToken: log.logToken, startTime: startTime, endTime: endTime, completion: { entries, localError, apiError in
                         if let entries = entries as? [Entry] {
