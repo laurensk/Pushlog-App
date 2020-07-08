@@ -54,7 +54,7 @@ struct LogsView: View {
                 .onAppear {
                     self.setupUI()
             }.onAppear {
-                DispatchQueue.main.async {
+                if self.logs.isEmpty {
                     self.getLogs()
                 }
             }

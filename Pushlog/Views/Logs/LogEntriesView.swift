@@ -86,7 +86,9 @@ struct LogEntriesView: View {
         }.navigationBarTitle("\(log.displayName)")
             .onAppear {
                 self.setupUI()
-                self.getEntries()
+                if self.entries.isEmpty {
+                    self.getEntries()
+                }
         }
     }
     

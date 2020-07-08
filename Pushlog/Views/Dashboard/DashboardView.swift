@@ -93,9 +93,11 @@ struct DashboardView: View {
                 }
             }.navigationBarTitle("Dashboard")
                 .onAppear {
-                    self.setupUI()
-                    self.getAllEntries()
                     self.updateLogsCount()
+                    self.setupUI()
+                    if self.entries.isEmpty {
+                        self.getAllEntries()
+                    }
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }

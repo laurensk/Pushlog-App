@@ -83,7 +83,10 @@ struct EntriesView: View {
             }.navigationBarTitle("Entries")
                 .onAppear {
                     self.setupUI()
-                    self.getAllEntries()
+                    if self.entries.isEmpty {
+                        self.getAllEntries()
+                    }
+                    
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
