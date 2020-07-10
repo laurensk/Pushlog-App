@@ -23,7 +23,7 @@ struct MoreView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
+                UniversalList {
                     MoreCardView(childView: AnyView(VStack(alignment: .leading) {
                         HStack {
                             Image(systemName: "person.crop.circle")
@@ -222,8 +222,8 @@ struct MoreView: View {
                     }.padding().padding(.top, 8).padding(.bottom, 8)))
                 }.buttonStyle(BorderlessButtonStyle())
             }.navigationBarTitle("Pushlog")
-                .onAppear {
-                    self.setupUI()
+            .onAppear {
+                self.setupUI()
             }.sheet(isPresented: $showUserTokenSheet) {
                 MoreUserTokenView(appUser: self.appUser)
             }

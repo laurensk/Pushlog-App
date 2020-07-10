@@ -35,7 +35,7 @@ struct EntriesView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
+                UniversalList {
                     VStack {
                         Picker(selection: $dateFilter.onChange({ _ in
                             self.getAllEntries()

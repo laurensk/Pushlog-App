@@ -25,7 +25,7 @@ struct LogsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
+                UniversalList {
                     if logs.isEmpty && emptyResponse {
                         HStack {
                             Spacer()

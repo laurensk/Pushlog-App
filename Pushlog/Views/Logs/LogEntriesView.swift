@@ -36,7 +36,7 @@ struct LogEntriesView: View {
     
     var body: some View {
         VStack {
-            List {
+            UniversalList {
                 VStack {
                     Picker(selection: $dateFilter.onChange({ _ in
                         self.getEntries()
