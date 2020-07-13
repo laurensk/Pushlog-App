@@ -225,7 +225,7 @@ struct MoreView: View {
             .onAppear {
                 self.setupUI()
             }.sheet(isPresented: $showUserTokenSheet) {
-                MoreUserTokenView(appUser: self.appUser)
+                TokenSheetView(token: self.appUser.userToken)
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }

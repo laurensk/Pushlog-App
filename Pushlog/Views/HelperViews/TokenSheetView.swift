@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct MoreUserTokenView: View {
+struct TokenSheetView: View {
     
-    let appUser: AppUser
+    let token: String
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -19,12 +19,12 @@ struct MoreUserTokenView: View {
             VStack {
                 VStack {
                     ScrollView {
-                     Text("\(appUser.userToken)").padding()
+                     Text("\(token)").padding()
                     }
                 }.background(RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(Color(UIColor.systemGray6))).padding()
                 Button(action: {
-                    ClipboardUtils.writeToken(token: self.appUser.userToken)
+                    ClipboardUtils.writeToken(token: self.token)
                 }) {
                     Text("Copy Token")
                         .foregroundColor(.white)
@@ -58,7 +58,7 @@ struct MoreUserTokenView: View {
     }
 }
 
-struct MoreUserTokenView_Previews: PreviewProvider {
+struct TokenSheetView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyView()
     }

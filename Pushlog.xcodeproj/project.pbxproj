@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D1FCF4124B4A02F009BBD75 /* GlobalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FCF4024B4A02F009BBD75 /* GlobalEntry.swift */; };
-		0D1FCF4324B4B042009BBD75 /* MoreUserTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FCF4224B4B042009BBD75 /* MoreUserTokenView.swift */; };
+		0D1FCF4324B4B042009BBD75 /* TokenSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FCF4224B4B042009BBD75 /* TokenSheetView.swift */; };
 		0D2E8EA124B34A5900E3E536 /* SwiftUICustomNavigationLink in Frameworks */ = {isa = PBXBuildFile; productRef = 0D2E8EA024B34A5900E3E536 /* SwiftUICustomNavigationLink */; };
 		0D2E8EA424B38B0F00E3E536 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E8EA324B38B0F00E3E536 /* Binding+Extensions.swift */; };
 		0D2E8EA624B3955600E3E536 /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2E8EA524B3955600E3E536 /* EntryDetailView.swift */; };
@@ -85,7 +85,7 @@
 
 /* Begin PBXFileReference section */
 		0D1FCF4024B4A02F009BBD75 /* GlobalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalEntry.swift; sourceTree = "<group>"; };
-		0D1FCF4224B4B042009BBD75 /* MoreUserTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreUserTokenView.swift; sourceTree = "<group>"; };
+		0D1FCF4224B4B042009BBD75 /* TokenSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenSheetView.swift; sourceTree = "<group>"; };
 		0D2E8E9E24B34A4C00E3E536 /* SwiftUICustomNavigationLink */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftUICustomNavigationLink; path = ../SwiftUICustomNavigationLink; sourceTree = "<group>"; };
 		0D2E8EA324B38B0F00E3E536 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
 		0D2E8EA524B3955600E3E536 /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
@@ -339,7 +339,6 @@
 				0DD87F4524ADA0D100DBE3CD /* MoreView.swift */,
 				0D403CED24AE7C11007A1C8A /* MoreCardView.swift */,
 				0D8BB42624B1F3D1003454D9 /* MoreTutorialView.swift */,
-				0D1FCF4224B4B042009BBD75 /* MoreUserTokenView.swift */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -410,6 +409,7 @@
 				0D8BB42424B1F0F9003454D9 /* KeyboardResponder.swift */,
 				0D8BB42824B1F60B003454D9 /* SafariView.swift */,
 				0D3276A024B8FB1700E0AED6 /* UniversalList.swift */,
+				0D1FCF4224B4B042009BBD75 /* TokenSheetView.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -564,7 +564,7 @@
 				0D2E8EA624B3955600E3E536 /* EntryDetailView.swift in Sources */,
 				0D1FCF4124B4A02F009BBD75 /* GlobalEntry.swift in Sources */,
 				0DD87F0624ADA02A00DBE3CD /* AppDelegate.swift in Sources */,
-				0D1FCF4324B4B042009BBD75 /* MoreUserTokenView.swift in Sources */,
+				0D1FCF4324B4B042009BBD75 /* TokenSheetView.swift in Sources */,
 				0D80D3CB24AFC1E7003BCDCD /* IntroFeatureViews.swift in Sources */,
 				0DD87F0824ADA02A00DBE3CD /* SceneDelegate.swift in Sources */,
 				0D403CF524AF0D31007A1C8A /* ApiService.swift in Sources */,

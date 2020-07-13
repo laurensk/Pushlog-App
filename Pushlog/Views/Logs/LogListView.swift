@@ -12,6 +12,8 @@ struct LogListView: View {
     
     let log: Log
     
+    @State private var showLogTokenSheet = false
+    
     var body: some View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 10)
@@ -21,10 +23,18 @@ struct LogListView: View {
                 HStack(alignment: .center) {
                     Text("\(log.displayName)").fontWeight(.semibold).lineLimit(1)
                     Spacer()
+                    Button(action: {
+                        self.showLogTokenSheet.toggle()
+                    }) {
+                        Image(systemName: "lock.fill").foregroundColor(Color(UIColor.systemGray))
+                    }.padding(.trailing, 10)
                     Image(systemName: "chevron.right").padding(.trailing, 5).foregroundColor(Color(UIColor.systemGray))
                 }
             }.padding().padding(.top, 8).padding(.bottom, 8)
         }.padding(.bottom, 5)
+        .sheet(isPresented: $showLogTokenSheet) {
+            TokenSheetView(token: log.logToken)
+        }
     }
 }
 

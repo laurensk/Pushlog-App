@@ -43,7 +43,7 @@ struct TabBarView: View {
             }.tag(TabBarSelection.Apps)
             MoreView(update: update)
                 .tabItem {
-                    Image(systemName: "ellipsis").imageScale(.large)
+                    Image(systemName: "ellipsis")
                     Text("More")
             }.tag(TabBarSelection.More)
         }
