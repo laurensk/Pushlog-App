@@ -20,7 +20,17 @@ struct LogsView: View {
     @State private var emptyResponse = false
     @State private var logs: [Log] = []
     
+    @State private var showAddLogSheet = false
+    
     let service = ApiService()
+    
+    var addLogButton: some View {
+        Button(action: {
+            self.showAddLogSheet.toggle()
+        }) {
+            Image(systemName: "plus").imageScale(.large)
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -57,6 +67,9 @@ struct LogsView: View {
                 if self.logs.isEmpty {
                     self.getLogs()
                 }
+            }.navigationBarItems(trailing: addLogButton)
+            .sheet(isPresented: $showAddLogSheet) {
+                Text("hello darkness")
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }

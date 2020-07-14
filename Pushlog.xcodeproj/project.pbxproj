@@ -26,6 +26,7 @@
 		0D403D0124AF2D97007A1C8A /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403D0024AF2D97007A1C8A /* IntroductionView.swift */; };
 		0D403D0324AF2DA4007A1C8A /* LoginSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403D0224AF2DA4007A1C8A /* LoginSheetView.swift */; };
 		0D403D0524AF2DDD007A1C8A /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D403D0424AF2DDD007A1C8A /* AppUser.swift */; };
+		0D5DA76724BD824400325387 /* AddLogSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5DA76624BD824400325387 /* AddLogSheetView.swift */; };
 		0D71D1CD24B4BD390007A71D /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 0D71D1CC24B4BD390007A71D /* Introspect */; };
 		0D71D1D024B4BDB80007A71D /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 0D71D1CF24B4BDB80007A71D /* SwiftUIRefresh */; };
 		0D80D3C424AFACBA003BCDCD /* IntroFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80D3C324AFACBA003BCDCD /* IntroFeatureView.swift */; };
@@ -103,6 +104,7 @@
 		0D403D0024AF2D97007A1C8A /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		0D403D0224AF2DA4007A1C8A /* LoginSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSheetView.swift; sourceTree = "<group>"; };
 		0D403D0424AF2DDD007A1C8A /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		0D5DA76624BD824400325387 /* AddLogSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogSheetView.swift; sourceTree = "<group>"; };
 		0D71D1CE24B4BDAC0007A71D /* SwiftUIRefresh */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SwiftUIRefresh; sourceTree = "<group>"; };
 		0D80D3C324AFACBA003BCDCD /* IntroFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroFeatureView.swift; sourceTree = "<group>"; };
 		0D80D3C524AFB088003BCDCD /* IntroExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroExtensions.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				0DD87F4324ADA0C900DBE3CD /* LogsView.swift */,
 				0D403CEB24AE6D85007A1C8A /* LogListView.swift */,
 				0DD87F4D24ADFC2600DBE3CD /* LogEntriesView.swift */,
+				0D5DA76624BD824400325387 /* AddLogSheetView.swift */,
 			);
 			path = Logs;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				0D403D0324AF2DA4007A1C8A /* LoginSheetView.swift in Sources */,
 				0DD87F4624ADA0D100DBE3CD /* MoreView.swift in Sources */,
 				0DD87F4824ADA59600DBE3CD /* DashboardCardView.swift in Sources */,
+				0D5DA76724BD824400325387 /* AddLogSheetView.swift in Sources */,
 				0D403CFC24AF1C14007A1C8A /* User.swift in Sources */,
 				0D80D3C424AFACBA003BCDCD /* IntroFeatureView.swift in Sources */,
 				0DD9635F24B0B7EA007D5D8C /* ApiRequest.swift in Sources */,
